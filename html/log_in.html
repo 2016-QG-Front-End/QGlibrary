@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    <title>登录注册</title>
+    
+    <!-- 360 使用Google Chrome Frame -->
+    <meta name="renderer" content="webkit">
+    
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    
+    <!-- 开启响应式 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO页面关键词 -->
+    <meta name="keywords" content="your keywords">
+    
+    <!-- SEO页面描述 -->
+    <meta name="description" content="your description">
+    
+    <!-- favicon，可更改图片类型 -->
+    <link rel="shortcut icon" href="/favicon.ico" />
+    
+    <!-- 重设css -->
+    <link  rel="stylesheet" href="../css/normalize.css">
+
+    <!-- 引入css -->
+    <link rel="stylesheet" href="../css/log_in.css">
+</head>
+<body>
+    <!-- 登录信息 -->
+    <div class="container">
+        <div id="home-page">
+            <img class="logo" src="../images/logo.png">
+        </div>
+        
+        <form class="log-in-form-data">
+            <div class="input-data">
+                <p class="error">queasd</p>
+                <input id="username" type="text" name="username" placeholder="您的用户名">
+                <input id="password" type="password" name="password" placeholder="您的密码">
+                <div class="forget-password">
+                    <a href="#">忘记密码</a>
+                </div>
+                <button class="submit">登录</button>
+            </div>
+            <!-- 第三方登录接口 -->
+            <div class="third-party-web">
+                <p class="third-party-text">用合作网站账户直接登录</p>
+                <div class="third-party-connect">
+                    <a href="#" class="sina">
+                        <i></i>新浪微博
+                    </a>
+                    <a href="#" class="qq">
+                        <i></i>QQ
+                    </a>
+                    <a href="#" class="we-chat">
+                        <i></i>微信
+                    </a>
+                </div>
+            </div>
+            <!-- end第三方登录接口 -->
+        </form>
+        <p class="warm-sign-in">还没有账号？<a class="change-sign-in">马上注册</a></p>
+    </div>
+
+    <!-- end登录信息 -->
+    <script src="../js/jquery_3.2.1/jquery_3.2.1.min.js"></script>
+    <script src="../js/jquery_3.2.1/jquery_3.2.1.js"></script>
+    <script src="http://libs.baidu.com/underscore/1.3.3/underscore.js"></script>
+</body>
+</html>

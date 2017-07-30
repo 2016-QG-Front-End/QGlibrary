@@ -1,0 +1,193 @@
+body {
+    background-image: url("../images/Log_in_background.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+.logo {
+    width: 88px;
+    margin: 262px auto 0 auto;
+    display: inherit;
+    cursor: pointer;
+}
+/** 登录栏 **/
+.container {
+    position: relative;
+
+    width: 1200px;
+    height: 100%;
+}
+
+.log-in-form-data {
+    position: absolute;
+    top: 106px;
+    left: 35%;
+    z-index: 10;
+
+    width: 370px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 3px 3px rgba(0,0,0,.4);
+}
+
+.log-in-form-data,
+.container {
+    margin: auto;
+}
+
+.input-data {
+    margin: 20px auto;
+    width: 320px;
+}
+/*** 提示 ***/
+.error {
+    position: absolute;
+    top: -2px;
+
+    margin: 0;
+    margin-top: 10px;
+    padding: 0 0 3px 22px;
+    width: 300px;
+
+    font-size: 12px;
+    text-align: left;
+
+    color: #ff3c00;
+    background: url(../images/log_in_err.png) 0 -60px no-repeat #fff;
+}
+/*** end 提示 ***/
+.forget-password {
+    clear: both;
+
+    margin: 0 auto;
+    padding: 8px 0 0;
+    width: 320px;
+
+    text-align: right;
+}
+.forget-password a {
+    font-size: 12px;
+    text-decoration: none;
+
+    color: #ffa800;
+}
+.forget-password a:hover {
+    text-decoration: underline;
+}
+/*** input框的制作 ***/
+.log-in-form-data input {
+    margin-top: 12px;
+    border-radius: 4px;
+    padding: 6px 0 6px 12px;
+    width: 306px;
+    height: 28px;
+
+    font-size: 14px;
+    line-height: 28px;
+
+    color: #666;
+}
+
+.log-in-form-data input:focus {
+    border: 1px solid #ffa200;
+
+    outline: none;
+    box-shadow: 0 0 10px #ffa200;
+
+    -webkit-transition: box-shadow .25s linear 0s;
+            transition: box-shadow .25s linear 0s;
+}
+
+.submit {
+    border: none;
+    border-radius: 5px;
+    width: 320px;
+    height: 42px;
+    margin-top: 20px;
+    margin-bottom: 24px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 40px;
+    text-align: center;
+
+    color: #fff;
+    background-color: #ffa800;
+
+    cursor: pointer;
+}
+
+.submit:hover {
+    opacity: .8;
+}
+/*** end input框的制作 ***/
+/*** 第三方登录 ***/
+.third-party-text {
+    padding: 15px 0 20px 24px;
+    font-size: 12px;
+    color: #999;
+    border-top: 1px solid #ebebeb;
+}
+.third-party-connect {
+    padding: 0 0 0 25px;
+}
+.third-party-connect a {
+    width: 58px;
+    height: 84px;
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    display: inline-block;
+}
+
+.third-party-connect a  i {
+    width: 42px;
+    height: 42px;
+    background: url("../images/c_icon3.gif") no-repeat;
+    display: block;
+    margin: 0 0 4px 10px;
+    cursor: pointer;
+}
+.third-party-connect .sina:hover  i {
+    background-position: 0px -42px;
+}
+.third-party-connect .qq:hover  i {
+    background-position: -42px -42px;
+}
+.third-party-connect .qq  i {
+   background-position: -42px 0;
+}
+.third-party-connect .we-chat:hover  i {
+    background-position: -294px -42px;
+}
+.third-party-connect .we-chat  i {
+   background-position: -294px 0;
+}
+/*** end第三方登录 ***/
+/** end登录栏 **/
+/** 注册框的跳转 **/
+.warm-sign-in {
+    width: 164px;
+    margin: 10px auto;
+    background-color: #000;
+    border-radius: 15px;
+    background-color: rgba(0,0,0,.4);
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    padding: 4px 0;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.4);
+    position: absolute;
+    top: 516px;
+    left: 43%;
+}
+.change-sign-in {
+    color: #ffa800;
+    margin-left: 6px;
+    
+}
+.change-sign-in:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+/** end 注册框 **/
