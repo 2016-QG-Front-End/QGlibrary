@@ -1,3 +1,4 @@
+
 body {
     position: fixed;
 
@@ -14,8 +15,8 @@ body {
 }
 /* logo样式 */
 .logo {
-    width: 75px;
-    height: 70px;
+    width: 92px;
+    height: 92px;
     display: block;
     text-indent: -999px;
     overflow: hidden;
@@ -24,7 +25,7 @@ body {
     margin: 0 auto;
 
 }
-#home-page {
+#homePage {
     position: absolute;
     top: 15%;
     left: 35%;
@@ -65,6 +66,12 @@ body {
 .user-warm {
     top: 78px;
 }
+#hasWarm {
+    top: 10px;
+    background: url(../images/log_in_err.png)  no-repeat #fff;
+    background-size: 16px 16px;
+    padding-left: 20px;
+}
 .pass-warm {
     top: 150px;
 }
@@ -102,7 +109,7 @@ body {
     font-size: 12px;
     text-decoration: none;
 
-    color: #ffa800;
+    color: #8bc24a;
 }
 .forget-password a:hover {
     text-decoration: underline;
@@ -137,10 +144,10 @@ body {
 }
 .sign-in-form-data input:focus,
 .log-in-form-data input:focus {
-    border: 1px solid #ffa200;
+    border: 1px solid #8bc24a;
 
     outline: none;
-    box-shadow: 0 0 10px #ffa200;
+    box-shadow: 0 0 10px #8bc24a;
 
     -webkit-transition: box-shadow .25s linear 0s;
             transition: box-shadow .25s linear 0s;
@@ -165,7 +172,7 @@ body {
     text-align: center;
 
     color: #fff;
-    background-color: #ffa800;
+    background-color: #8bc24a;
 
     cursor: pointer;
 }
@@ -261,7 +268,7 @@ body {
 .change-sign-in {
     margin-left: 6px;
 
-    color: #ffa800;
+    color: #8bc24a;
 }
 .change-log-in:hover,
 .change-sign-in:hover {
