@@ -53,10 +53,17 @@ $(function() {
 })
 
 $(function () {
-    $.ajax({
+    $('.log-submit').bind('click', function () {
+        var username = document.getElementById('username'),
+            password = document.getElementById('password'),
+            obj = new object();
+            obj.user = username.value;
+            obj.password = password.value;
+
+            $.ajax({
                 type: "post",
                 url: ,
-                data: ,
+                data: JSON.stringify(CreateJson(obj)),
                 dataType: "json",
                 async: false,
                 // username: 'admin',
@@ -69,7 +76,13 @@ $(function () {
                     alert("错误" + status + "错误抛出：" + errorThrowm);
                 }
             });
+    });
+    
 })
-function CreateJson () {
-    var obj = new Object;
+function CreateJson (obj) {
+    var account = new Object();
+    for (var i in obj) {
+        account[i] = obj[i];
+    }
+    return obj
 }
