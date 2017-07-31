@@ -31,7 +31,7 @@
 <body>
     
     <div class="container">
-        <div id="home-page">
+        <div id="homePage">
             <a class="logo" href=""></a>
         </div>
         <!-- 登录信息 -->
@@ -66,14 +66,15 @@
         <!-- end登录信息 -->
         <!-- 注册信息 -->
         
-            <form class="sign-in-form-data" style="display: none;">
+            <div class="sign-in-form-data" style="display: none;">
                 <div class="input-data">
-                    <p class="sign-in-error user-warm"  style="display: none;">queasd</p>
-                    <input id="sign-in-username" type="text" name="username" placeholder="注册的用户名">
-                    <p class="sign-in-error pass-warm"  style="display: none;">queasd</p>
+                    <p class="sign-in-error has-user" id="hasWarm" style="display: none;"></p>
+                    <p class="sign-in-error user-warm" id="userWarm" style="display: none;"></p>
+                    <input id="signInUsername" type="text" name="username" placeholder="注册的用户名">
+                    <p class="sign-in-error pass-warm" id="passWarm" style="display: none;"></p>
                     <input id="sign-in-password" type="password" name="password" placeholder="密码">
-                    <p class="sign-in-error confirm-pass-warm"  style="display: none;">queasd</p>
-                    <input id="sign-in-confirm-password" type="password" name="confirm-password" placeholder="确认密码">
+                    <p class="sign-in-error confirm-pass-warm" id="confirmPassWarm" style="display: none;"></p>
+                    <input id="signInConfirmPassword" type="password" name="confirm-password" placeholder="确认密码">
                     <button class="sign-submit">登录注册</button>
                 </div>
                 <!-- 第三方登录接口 -->
@@ -92,7 +93,7 @@
                     </div>
                 </div>
                 <!-- end第三方登录接口 -->
-            </form>
+            </div>
         <p class="warm-log-in" style="display: none;">已经有账号？<a class="change-log-in">马上登录</a></p>
         <!-- end 注册信息 -->
     </div>
