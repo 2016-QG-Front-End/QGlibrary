@@ -1,10 +1,10 @@
 body {
+    position: fixed;
+
     width: 100%;
     height: 100%;
 
-    background-image: url("../images/Log_in_background.jpg");
-    background-repeat: no-repeat;
-    background-size: 100%;
+    
 }
 .container {
     position: relative;
@@ -14,12 +14,22 @@ body {
 }
 /* logo样式 */
 .logo {
-    display: inherit;
+    width: 75px;
+    height: 70px;
+    display: block;
+    text-indent: -999px;
+    overflow: hidden;
+    background: url(../images/logo_1.png) no-repeat;
+        background-size: 100% 100%;
+    margin: 0 auto;
 
-    margin: 262px auto 0 auto;
-    width: 88px;
-
-    cursor: pointer;
+}
+#home-page {
+    position: absolute;
+    top: 15%;
+    left: 35%;
+        width: 370px;
+    margin: -30px auto 0;z-index: 3;
 }
 /* end logo样式 */
 
@@ -27,7 +37,7 @@ body {
 .sign-in-form-data,
 .log-in-form-data {
     position: absolute;
-    top: 106px;
+    top: 22%;
     left: 35%;
     z-index: 10;
 
@@ -49,9 +59,21 @@ body {
     width: 320px;
 }
 /*** 提示 ***/
-.error {
-    position: absolute;
+.log-in-error {
     top: -2px;
+}
+.user-warm {
+    top: 78px;
+}
+.pass-warm {
+    top: 150px;
+}
+.confirm-pass-warm {
+    top: 222px;
+}
+.log-in-error,
+.sign-in-error {
+    position: absolute;
 
     margin: 0;
     margin-top: 18px;
@@ -87,9 +109,14 @@ body {
 }
 /*** end 忘记密码 ***/
 /*** input框的制作 ***/
-.sign-in-form-data input,
 .log-in-form-data input {
     margin-top: 26px;
+}
+.sign-in-form-data input {
+    margin-top: 30px;
+}
+.sign-in-form-data input,
+.log-in-form-data input {
     border: 1px solid #d8d8d8;
     border-radius: 4px;
     border-radius: 4px;
@@ -118,9 +145,14 @@ body {
     -webkit-transition: box-shadow .25s linear 0s;
             transition: box-shadow .25s linear 0s;
 }
-
-.submit {
+.log-submit {
     margin-top: 20px;
+}
+.sign-submit {
+    margin-top: 34px;
+}
+.log-submit,
+.sign-submit {
     margin-bottom: 24px;
     border: none;
     border-radius: 5px;
@@ -138,7 +170,8 @@ body {
     cursor: pointer;
 }
 
-.submit:hover {
+.log-submit:hover,
+.sign-submit:hover {
     opacity: .8;
 }
 /*** end input框的制作 ***/
@@ -217,10 +250,12 @@ body {
     text-shadow: 1px 1px 1px rgba(0,0,0,.4);
 }
 .warm-sign-in {
-    top: 550px;
+    top: 68%;
+    z-index: 3;
 }
 .warm-log-in {
-    top: 588px;
+    top: 75%;
+    z-index: 3;
 }
 .change-log-in,
 .change-sign-in {
@@ -234,6 +269,24 @@ body {
 
     cursor: pointer;
 }
+/*** 背景图片 ***/
+.background {
+    overflow: hidden;
+
+    position: fixed;
+    position: absolute\9;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 100%\9;
+    height: 100%\9;
+
+    background-image: url(https://images.mafengwo.net/images/signup/wallpaper/21.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+}
+/*** end 背景图片 ***/
 /** end 注册框 **/
-
-
