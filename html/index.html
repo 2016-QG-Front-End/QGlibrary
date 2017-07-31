@@ -9,28 +9,29 @@
 </head>
 
 <body>
-    <br>
-    <br>
-    <br>
-    <br>
     <div id="progress"><span></span></div>
     <div class="navigation">
-        <div class="inner">
+        <div class="inner-navigation">
             <div class="logo"><img src="../images/logo.png">
-                <h1>QG Library</h1></div>
-            <div class="login-div">
-                <!--                 <span>登录</span>
-                |
-                <span>注册</span> -->
-                <img src="../images/avatar.png">
-                <div class="user-name">QG Read</div>
+                <a>
+                    <font>QG</font> Library</a>
+            </div>
+            <div class="login-state">
+                <div id="logOrReg">
+                    <a href="#">登录</a>|<a href="#">注册</a>
+                </div>
+                <div id="userInfo">
+                    <img id="userHead" src="../images/avatar.png">
+                    <div id="userName">QG Read</div>
+                    <div class="logout" onclick="#">注销</div>
+                </div>
             </div>
         </div>
     </div>
+    <!--main container start -->
     <div class="container">
-    
     </div>
+    <!-- main container end -->
     <script src="../js/navigation.js"></script>
 </body>
-
 </html>
