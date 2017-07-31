@@ -1,0 +1,292 @@
+body {
+    position: fixed;
+
+    width: 100%;
+    height: 100%;
+
+    
+}
+.container {
+    position: relative;
+
+    width: 1200px;
+    height: 100%;
+}
+/* logo样式 */
+.logo {
+    width: 75px;
+    height: 70px;
+    display: block;
+    text-indent: -999px;
+    overflow: hidden;
+    background: url(../images/logo_1.png) no-repeat;
+        background-size: 100% 100%;
+    margin: 0 auto;
+
+}
+#home-page {
+    position: absolute;
+    top: 15%;
+    left: 35%;
+        width: 370px;
+    margin: -30px auto 0;z-index: 3;
+}
+/* end logo样式 */
+
+/** 登录栏与注册栏 **/
+.sign-in-form-data,
+.log-in-form-data {
+    position: absolute;
+    top: 22%;
+    left: 35%;
+    z-index: 10;
+
+    border-radius: 5px;
+    width: 370px;
+
+    background-color: #fff;
+
+    box-shadow: 0 3px 3px rgba(0,0,0,.4);
+}
+.sign-in-form-data,
+.log-in-form-data,
+.container {
+    margin: auto;
+}
+
+.input-data {
+    margin: 20px auto;
+    width: 320px;
+}
+/*** 提示 ***/
+.log-in-error {
+    top: -2px;
+}
+.user-warm {
+    top: 78px;
+}
+.pass-warm {
+    top: 150px;
+}
+.confirm-pass-warm {
+    top: 222px;
+}
+.log-in-error,
+.sign-in-error {
+    position: absolute;
+
+    margin: 0;
+    margin-top: 18px;
+    padding: 0 0 3px 22px;
+    width: 300px;
+
+    font-size: 12px;
+    text-align: left;
+
+    color: #ff3c00;
+    background: url(../images/log_in_err.png) 0 -60px no-repeat #fff;
+}
+/*** end 提示 ***/
+
+/*** 忘记密码 ***/
+.forget-password {
+    clear: both;
+
+    margin: 0 auto;
+    padding: 8px 0 0;
+    width: 320px;
+
+    text-align: right;
+}
+.forget-password a {
+    font-size: 12px;
+    text-decoration: none;
+
+    color: #ffa800;
+}
+.forget-password a:hover {
+    text-decoration: underline;
+}
+/*** end 忘记密码 ***/
+/*** input框的制作 ***/
+.log-in-form-data input {
+    margin-top: 26px;
+}
+.sign-in-form-data input {
+    margin-top: 30px;
+}
+.sign-in-form-data input,
+.log-in-form-data input {
+    border: 1px solid #d8d8d8;
+    border-radius: 4px;
+    border-radius: 4px;
+    padding: 6px 0 6px 12px;
+    width: 306px;
+    height: 28px;
+
+    font-size: 14px;
+    line-height: 28px;
+
+    color: #666;
+
+    outline: none;
+    box-shadow: 0 0 5px #fff;
+
+    -webkit-transition: box-shadow .25s linear 0s;
+            transition: box-shadow .25s linear 0s;
+}
+.sign-in-form-data input:focus,
+.log-in-form-data input:focus {
+    border: 1px solid #ffa200;
+
+    outline: none;
+    box-shadow: 0 0 10px #ffa200;
+
+    -webkit-transition: box-shadow .25s linear 0s;
+            transition: box-shadow .25s linear 0s;
+}
+.log-submit {
+    margin-top: 20px;
+}
+.sign-submit {
+    margin-top: 34px;
+}
+.log-submit,
+.sign-submit {
+    margin-bottom: 24px;
+    border: none;
+    border-radius: 5px;
+    width: 320px;
+    height: 42px;
+
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 40px;
+    text-align: center;
+
+    color: #fff;
+    background-color: #ffa800;
+
+    cursor: pointer;
+}
+
+.log-submit:hover,
+.sign-submit:hover {
+    opacity: .8;
+}
+/*** end input框的制作 ***/
+
+/*** 第三方登录 ***/
+.third-party-text {
+    border-top: 1px solid #ebebeb;
+    padding: 15px 0 20px 24px;
+
+    font-size: 12px;
+
+    color: #999;
+}
+.third-party-connect {
+    padding: 0 0 0 25px;
+}
+.third-party-connect a {
+    display: inline-block;
+
+    width: 58px;
+    height: 84px;
+
+    font-size: 12px;
+    text-align: center;
+
+    color: #999;
+}
+
+.third-party-connect a  i {
+    display: block;
+
+    margin: 0 0 4px 10px;
+    width: 42px;
+    height: 42px;
+
+    background: url("../images/c_icon3.gif") no-repeat;
+
+    cursor: pointer;
+}
+.third-party-connect .sina:hover  i {
+    background-position: 0 -42px;
+}
+.third-party-connect .qq:hover  i {
+    background-position: -42px -42px;
+}
+.third-party-connect .qq  i {
+    background-position: -42px 0;
+}
+.third-party-connect .we-chat:hover  i {
+    background-position: -294px -42px;
+}
+.third-party-connect .we-chat  i {
+    background-position: -294px 0;
+}
+/*** end第三方登录 ***/
+/** end登录栏与注册栏 **/
+
+/** 注册框的跳转 **/
+.warm-log-in,
+.warm-sign-in {
+    position: absolute;
+    left: 43%;
+
+    margin: 10px auto;
+    border-radius: 15px;
+    padding: 4px 0;
+    width: 164px;
+
+    font-size: 12px;
+    text-align: center;
+
+    color: #fff;
+    background-color: #000;
+    background-color: rgba(0,0,0,.4);
+
+    text-shadow: 1px 1px 1px rgba(0,0,0,.4);
+}
+.warm-sign-in {
+    top: 68%;
+    z-index: 3;
+}
+.warm-log-in {
+    top: 75%;
+    z-index: 3;
+}
+.change-log-in,
+.change-sign-in {
+    margin-left: 6px;
+
+    color: #ffa800;
+}
+.change-log-in:hover,
+.change-sign-in:hover {
+    text-decoration: underline;
+
+    cursor: pointer;
+}
+/*** 背景图片 ***/
+.background {
+    overflow: hidden;
+
+    position: fixed;
+    position: absolute\9;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 100%\9;
+    height: 100%\9;
+
+    background-image: url(https://images.mafengwo.net/images/signup/wallpaper/21.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+}
+/*** end 背景图片 ***/
+/** end 注册框 **/
