@@ -9,7 +9,7 @@
     #progress {
         position: fixed;
         top: 0;
-        z-index: 10;
+        z-index: 101;
         height: 3px;
         background: #8bc24a;
         transition: opacity 500ms linear;
@@ -52,6 +52,7 @@
         height: 60px;
         background: white;
         box-shadow: 1px 1px 3px rgba(0, 0, 0, .4);
+        z-index:100;
     }
 /***导航栏结束***/
 
