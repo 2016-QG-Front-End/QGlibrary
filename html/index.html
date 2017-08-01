@@ -4,8 +4,12 @@
 <head>
     <meta charset="utf-8">
     <title>QG library</title>
-    <script src="../js/jquery_3.2.1/jquery_3.2.1.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/index.css">
+
+    
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/new_books_show.css">
+    <link rel="stylesheet" href="../css/popular_book.css">
 </head>
 
 <body>
@@ -30,6 +34,7 @@
     </div>
     <!--main container start -->
     <div class="container">
+
         <div class="slider" id="slider">
             <div class="slide-container">
 
@@ -73,6 +78,286 @@
         }, 6000);
     });
     </script>
+
+        <div class="new-book-show">
+            <h2>新书速递</h2>
+            <!-- 书的类别标签 -->
+            <div class="book-type-label">
+                
+                <ul>
+                    <span>热门标签</span>
+                    <li>
+                        <h4>文学</h4>
+                        <span>小说</span>
+                        <span>随笔</span>
+                        <span>日本文化</span>
+                        <span>散文</span>
+                        
+                        <span>诗歌</span>
+                        <span>通话</span>
+                        <span>名著</span>
+                        <span>港台</span>
+
+                    </li>
+                    <li>
+                        <h4>流行</h4>
+                        <span>漫画</span>
+                        <span>绘本</span>
+                        <span>推理</span>
+                        <span>青春</span>
+                        
+                        <span>科幻</span>
+                        <span>言情</span>
+                        <span>武侠</span>
+                        <span>奇幻</span>
+                    </li>
+                    <li>
+                        <h4>文化</h4>
+                        <span>历史</span>
+                        <span>哲学</span>
+                        <span>传记</span>
+                        <span>设计</span>
+                        
+                        <span>建造</span>
+                        <span>电影</span>
+                        <span>回忆录</span>
+                        <span>音乐</span>
+                    </li>
+                    <li>
+                        <h4>生活</h4>
+                        <span>旅行</span>
+                        <span>励志</span>
+                        <span>职场</span>
+                        <span>美食</span>
+                        
+                        <span>灵修</span>
+                        <span>健康</span>
+                        <span>家居</span>
+                        
+                    </li>
+                    <li>
+                        <h4>经营</h4>
+                        <span>经济学</span>
+                        <span>管理</span>
+                        <span>金融</span>
+                        <span>营销</span>
+                        
+                        <span>商业</span>
+                        <span>理财</span>
+                        <span>股票</span>
+                        <span>企业史</span>
+                    </li>
+                    <li>
+                        <h4>科技</h4>
+                        <span>科普</span>
+                        <span>互联网</span>
+                        <span>编程</span>
+                        <span>交互设计</span>
+                        
+                        <span>算法</span>
+                        <span>通信</span>
+                        <span>神经网络</span>
+                        
+                    </li>
+                </ul>
+                
+            </div>
+            <!-- end 书的类别标签 -->
+            <!-- 左边推荐新书 -->
+            <ul class="new-books">
+                <div class="line-ul"></div>
+                <!-- <li class="new-book-show-cell">
+                    <img src='../images/book.jpg'>
+                    <div class="book-name">
+                        <a href="#">旅行者的早餐</a>
+                    </div>
+                    <div class="writer">作者名</div>
+                </li>
+                <li class="new-book-show-cell">
+                    <img src='../images/book.jpg'>
+                    <div class="book-name">
+                        <a href="#">旅行者的早餐</a>
+                    </div>
+                    <div class="writer">作者名</div>
+                </li>
+                <li class="new-book-show-cell">
+                    <img src='../images/book.jpg'>
+                    <div class="book-name">
+                        <a href="#">旅行者的早餐</a>
+                    </div>
+                    <div class="writer">作者名</div>
+                </li>
+                <li class="new-book-show-cell">
+                    <img src='../images/book.jpg'>
+                    <div class="book-name">
+                        <a href="#">旅行者的早餐</a>
+                    </div>
+                    <div class="writer">作者名</div>
+                </li>
+                <li class="new-book-show-cell">
+                    <img src='../images/book.jpg'>
+                    <div class="book-name">
+                        <a href="#">旅行者的早餐</a>
+                    </div>
+                    <div class="writer">作者名</div>
+                </li>
+                <li class="new-book-show-cell">
+                    <img src='../images/book.jpg'>
+                    <div class="book-name">
+                        <a href="#">旅行者的早餐</a>
+                    </div>
+                    <div class="writer">作者名</div>
+                </li>
+                <li class="new-book-show-cell">
+                    <img src='../images/book.jpg'>
+                    <div class="book-name">
+                        <a href="#">旅行者的早餐</a>
+                    </div>
+                    <div class="writer">作者名</div>
+                </li>
+                <li class="new-book-show-cell">
+                    <img src='../images/book.jpg'>
+                    <div class="book-name">
+                        <a href="#">旅行者的早餐</a>
+                    </div>
+                    <div class="writer">作者名</div>
+                </li>
+                <li class="new-book-show-cell">
+                    <img src='../images/book.jpg'>
+                    <div class="book-name">
+                        <a href="#">旅行者的早餐</a>
+                    </div>
+                    <div class="writer">作者名</div>
+                </li>
+                <li class="new-book-show-cell">
+                    <img src='../images/book.jpg'>
+                    <div class="book-name">
+                        <a href="#">旅行者的早餐</a>
+                    </div>
+                    <div class="writer">作者名</div>
+                </li> -->
+            </ul>
+            <!-- end 左边推荐新书 -->
+        </div>
+        <!-- 热门图书 -->
+        <div class="popular-books">
+            <h2>最受关注图书</h2>
+            <div class="line-popular-book"></div>
+            <ul class="popular-books-table">
+                <li>
+                    <a href="">
+                        <img src="https://img3.doubanio.com/spic/s29476260.jpg">
+                    </a>
+                    <div>
+                        <h4>雪落香杉树</h4>
+                        <p class="evaluate">评分：<i>8.7</i></p>
+                        <p class="book-writer">戴维·伽特森</p>
+                        <p class="category ">小说 / 美国文学 </p>
+
+                        <p class="cntent-abstract">内容简介:一位默默无闻的美国中学教师，用十年时间写……</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="https://img3.doubanio.com/spic/s29476260.jpg">
+                    </a>
+                    <div>
+                        <h4>雪落香杉树</h4>
+                        <p class="evaluate">评分：<i>8.7</i></p>
+                        <p class="book-writer">戴维·伽特森</p>
+                        <p class="category ">小说 / 美国文学 </p>
+
+                        <p class="cntent-abstract">内容简介:一位默默无闻的美国中学教师，用十年时间写……</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="https://img3.doubanio.com/spic/s29476260.jpg">
+                    </a>
+                    <div>
+                        <h4>雪落香杉树</h4>
+                        <p class="evaluate">评分：<i>8.7</i></p>
+                        <p class="book-writer">戴维·伽特森</p>
+                        <p class="category ">小说 / 美国文学 </p>
+
+                        <p class="cntent-abstract">内容简介:一位默默无闻的美国中学教师，用十年时间写……</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="https://img3.doubanio.com/spic/s29476260.jpg">
+                    </a>
+                    <div>
+                        <h4>雪落香杉树</h4>
+                        <p class="evaluate">评分：<i>8.7</i></p>
+                        <p class="book-writer">戴维·伽特森</p>
+                        <p class="category ">小说 / 美国文学 </p>
+
+                        <p class="cntent-abstract">内容简介:一位默默无闻的美国中学教师，用十年时间写……</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="https://img3.doubanio.com/spic/s29476260.jpg">
+                    </a>
+                    <div>
+                        <h4>雪落香杉树</h4>
+                        <p class="evaluate">评分：<i>8.7</i></p>
+                        <p class="book-writer">戴维·伽特森</p>
+                        <p class="category ">小说 / 美国文学 </p>
+
+                        <p class="cntent-abstract">内容简介:一位默默无闻的美国中学教师，用十年时间写……</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="https://img3.doubanio.com/spic/s29476260.jpg">
+                    </a>
+                    <div>
+                        <h4>雪落香杉树</h4>
+                        <p class="evaluate">评分：<i>8.7</i></p>
+                        <p class="book-writer">戴维·伽特森</p>
+                        <p class="category ">小说 / 美国文学 </p>
+
+                        <p class="cntent-abstract">内容简介:一位默默无闻的美国中学教师，用十年时间写……</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="https://img3.doubanio.com/spic/s29476260.jpg">
+                    </a>
+                    <div>
+                        <h4>雪落香杉树</h4>
+                        <p class="evaluate">评分：<i>8.7</i></p>
+                        <p class="book-writer">戴维·伽特森</p>
+                        <p class="category ">小说 / 美国文学 </p>
+
+                        <p class="cntent-abstract">内容简介:一位默默无闻的美国中学教师，用十年时间写……</p>
+                    </div>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="https://img3.doubanio.com/spic/s29476260.jpg">
+                    </a>
+                    <div>
+                        <h4>雪落香杉树</h4>
+                        <p class="evaluate">评分：<i>8.7</i></p>
+                        <p class="book-writer">戴维·伽特森</p>
+                        <p class="category ">小说 / 美国文学 </p>
+
+                        <p class="cntent-abstract">内容简介:一位默默无闻的美国中学教师，用十年时间写……</p>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+        <!-- end 热门图书 -->
+    </div>
+    <!-- main container end -->
+    <script src="../js/jquery_3.2.1/jquery_3.2.1.min.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/new_books_show.js"></script>
+    <script src="../js/popular_book.js"></script>
 </body>
 
 </html>
