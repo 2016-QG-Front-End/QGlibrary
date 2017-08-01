@@ -1,0 +1,93 @@
+
+/** 新书速递 **/
+.new-book-show-cell img {
+    width: 106px;
+    height: 158px;
+
+    cursor: pointer;
+}
+.new-book-show-cell {
+    display: inline-block;
+
+    padding: 10px 20px 10px 0;
+    width: 106px;
+}
+.writer,
+.book-name a {
+    font-size: 13px;
+}
+.book-name a:hover {
+    color: #fff;
+    background-color: #37a;
+}
+.book-name a {
+    text-decoration: none;
+
+    color: #37a;
+
+    cursor: pointer;
+}
+/*** 对左边新书速递盒子的定义 ***/
+.new-book-show > ul {
+    list-style: none;
+
+    margin-top: 0;
+    padding: 0;
+    width: 650px;
+}
+/*** end 对左边新书速递盒子的定义 ***/
+.new-book-show {
+    overflow: auto;
+}
+.new-book-show > h2 {
+    margin: 16px auto 5px auto;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    color: #4caf50;
+}
+/*** 分割线 ***/
+.line-ul {
+    width: 629px;
+    height: 1px;
+
+    background-image: -webkit-linear-gradient(top right, #69eacb 0%, #eaccf8 48%, #6654f1 100%);
+    background-image:      -o-linear-gradient(top right, #69eacb 0%, #eaccf8 48%, #6654f1 100%);
+    background-image:         linear-gradient(to bottom left, #69eacb 0%, #eaccf8 48%, #6654f1 100%);
+}
+/*** end 分割线 ***/
+/*** 右边书类别标签 ***/
+.book-type-label > ul {
+    float: right;
+
+    list-style: none;
+
+    margin-top: 0;
+    padding-right: 54px;
+}
+.book-type-label  ul li span {
+    display: inline-block;
+
+    margin: 0 3px 5px 0;
+    padding: 2px 10px;
+
+    font-size: 13px;
+    line-height: 20px;
+
+    color: #37a;
+    background-color: #f5f5f5;
+
+    cursor: pointer;
+}
+.book-type-label  ul li span:hover {
+    background-color: rgba(149, 149, 149, .8);
+}
+.book-type-label  ul li h4 {
+    margin: 20px 0 4px 0;
+
+    font-size: 15px;
+    font-weight: 600;
+}
+/*** end 右边书类别标签 ***/
+/** end 新书速递 **/

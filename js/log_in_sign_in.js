@@ -172,10 +172,10 @@ function CreateJson(obj) {
 function LogInChange(data) {
     alert("111");
     switch (data.status) {
-        case true:
-            locaton.href = data.url;
+        case 'true':
+            location.href = 'http://192.168.1.110:3306' + data.url;
             break;
-        case false:
+        case 'false':
             $('.log-in-error').html('用户名不存在或密码错误').css("display", "block");
     }
 }
@@ -286,8 +286,8 @@ $(function() {
         dataType: "json",
         async: true,
         success: function(data) {
-            $('.background').css('backgroundImage', data.picture);
-
+            // $('#background').css('backgroundImage', data.picture);
+            document.getElementById("background").style.backgroundImage = 'url("' + data.picture + '")';
         },
         error: function(xhr, status, errorThrowm) {
             alert("错误" + status + "错误抛出：" + errorThrowm);
