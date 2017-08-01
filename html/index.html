@@ -4,8 +4,6 @@
 <head>
     <meta charset="utf-8">
     <title>QG library</title>
-
-    
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/new_books_show.css">
@@ -34,10 +32,9 @@
     </div>
     <!--main container start -->
     <div class="container">
-
+        <!-- slider start -->
         <div class="slider" id="slider">
             <div class="slide-container">
-
                 <div class="one-screen">
                     <img src="../images/book.jpg">
                     <div class="hot-book-info">
@@ -50,40 +47,13 @@
                         <div class="hot-book-intro">《旅行者的早餐》是作家米原万里的美食美文随笔集</div>
                     </div>
                 </div>
-
             </div>
         </div>
-    </div>
-    <!-- main container end -->
-    <script src="../js/progressBar.js"></script>
-    <script>
-    $(function() {
-        var kitab={
-            bookName:'a book',
-            authorName:'Mila',
-            score:'9.9',
-            bookInfo:'weifowjfoiewjfioejwiofjewiofjewiofjeo'
-        };
-        var slidingBook='<div class="one-screen"><img src="../images/book.jpg"><div class="hot-book-info"><h1>'+kitab.bookName+'</h1><span>作者：</span><span>'+kitab.authorName+'</span><br><span>评分：</span><div class="hot-book-score">'+kitab.score+'</div><span>内容简介：</span><div class="hot-book-intro">'+kitab.bookInfo
-        +'</div></div></div>';
-        $('.slide-container').append(slidingBook);
-        $('.slide-container').append(slidingBook);
-        $('.slide-container').append(slidingBook);
-
-        setInterval(function() {
-            if (parseInt($('.slide-container').css('marginLeft')) == -2700) {
-                $('.slide-container').css('marginLeft', '225px');
-            }
-            $('.slide-container').animate({ marginLeft: '-=975px' }, 3000);
-        }, 6000);
-    });
-    </script>
-
+        <!-- slider end -->
         <div class="new-book-show">
             <h2>新书速递</h2>
             <!-- 书的类别标签 -->
             <div class="book-type-label">
-                
                 <ul>
                     <span>热门标签</span>
                     <li>
@@ -92,12 +62,10 @@
                         <span>随笔</span>
                         <span>日本文化</span>
                         <span>散文</span>
-                        
                         <span>诗歌</span>
                         <span>通话</span>
                         <span>名著</span>
                         <span>港台</span>
-
                     </li>
                     <li>
                         <h4>流行</h4>
@@ -105,7 +73,6 @@
                         <span>绘本</span>
                         <span>推理</span>
                         <span>青春</span>
-                        
                         <span>科幻</span>
                         <span>言情</span>
                         <span>武侠</span>
@@ -117,7 +84,6 @@
                         <span>哲学</span>
                         <span>传记</span>
                         <span>设计</span>
-                        
                         <span>建造</span>
                         <span>电影</span>
                         <span>回忆录</span>
@@ -129,11 +95,9 @@
                         <span>励志</span>
                         <span>职场</span>
                         <span>美食</span>
-                        
                         <span>灵修</span>
                         <span>健康</span>
                         <span>家居</span>
-                        
                     </li>
                     <li>
                         <h4>经营</h4>
@@ -141,7 +105,6 @@
                         <span>管理</span>
                         <span>金融</span>
                         <span>营销</span>
-                        
                         <span>商业</span>
                         <span>理财</span>
                         <span>股票</span>
@@ -153,20 +116,16 @@
                         <span>互联网</span>
                         <span>编程</span>
                         <span>交互设计</span>
-                        
                         <span>算法</span>
                         <span>通信</span>
                         <span>神经网络</span>
-                        
                     </li>
                 </ul>
-                
             </div>
             <!-- end 书的类别标签 -->
             <!-- 左边推荐新书 -->
             <ul class="new-books">
                 <div class="line-ul"></div>
-                
             </ul>
             <!-- end 左边推荐新书 -->
         </div>
@@ -182,8 +141,31 @@
     <!-- main container end -->
     <script src="../js/jquery_3.2.1/jquery_3.2.1.min.js"></script>
     <script src="../js/navigation.js"></script>
-    <script src="../js/new_books_show.js"></script>
-    <script src="../js/popular_book.js"></script>
+    <!--     <script src="../js/new_books_show.js"></script>
+    <script src="../js/popular_book.js"></script> -->
+    <script src="../js/progressBar.js"></script>
+    <script>
+    $(function() {
+        var kitab = {
+            bookName: 'a book',
+            authorName: 'Mila',
+            score: '9.9',
+            bookInfo: 'weifowjfoiewjfioejwiofjewiofjewiofjeo'
+        };
+        var slidingBook = '<div class="one-screen"><img src="../images/book.jpg"><div class="hot-book-info"><h1>' + kitab.bookName + '</h1><span>作者：</span><span>' + kitab.authorName + '</span><br><span>评分：</span><div class="hot-book-score">' + kitab.score + '</div><span>内容简介：</span><div class="hot-book-intro">' + kitab.bookInfo +
+            '</div></div></div>';
+        $('.slide-container').append(slidingBook);
+        $('.slide-container').append(slidingBook);
+        $('.slide-container').append(slidingBook);
+
+        setInterval(function() {
+            if (parseInt($('.slide-container').css('marginLeft')) == -2700) {
+                $('.slide-container').css('marginLeft', '225px');
+            }
+            $('.slide-container').animate({ marginLeft: '-=975px' }, 3000);
+        }, 6000);
+    });
+    </script>
 </body>
 
 </html>
