@@ -4,8 +4,6 @@ body {
 
     width: 100%;
     height: 100%;
-
-    
 }
 .container {
     position: relative;
@@ -15,22 +13,26 @@ body {
 }
 /* logo样式 */
 .logo {
+    display: block;
+    overflow: hidden;
+
+    margin: 0 auto;
     width: 92px;
     height: 92px;
-    display: block;
-    text-indent: -999px;
-    overflow: hidden;
-    background: url(../images/logo_1.png) no-repeat;
-        background-size: 100% 100%;
-    margin: 0 auto;
 
+    text-indent: -999px;
+
+    background: url(../images/logo_1.png) no-repeat;
+    background-size: 100% 100%;
 }
 #homePage {
     position: absolute;
     top: 15%;
     left: 35%;
-        width: 370px;
-    margin: -30px auto 0;z-index: 3;
+    z-index: 3;
+
+    margin: -30px auto 0;
+    width: 370px;
 }
 /* end logo样式 */
 
@@ -68,9 +70,11 @@ body {
 }
 #hasWarm {
     top: 10px;
+
+    padding-left: 20px;
+
     background: url(../images/log_in_err.png)  no-repeat #fff;
     background-size: 16px 16px;
-    padding-left: 20px;
 }
 .pass-warm {
     top: 150px;
