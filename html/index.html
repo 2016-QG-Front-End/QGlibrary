@@ -30,8 +30,49 @@
     </div>
     <!--main container start -->
     <div class="container">
+        <div class="slider" id="slider">
+            <div class="slide-container">
+
+                <div class="one-screen">
+                    <img src="../images/book.jpg">
+                    <div class="hot-book-info">
+                        <h1>旅行者的早餐</h1>
+                        <span>作者：</span><span>作者名</span>
+                        <br>
+                        <span>评分：</span>
+                        <div class="hot-book-score">8.2</div>
+                        <span>内容简介：</span>
+                        <div class="hot-book-intro">《旅行者的早餐》是作家米原万里的美食美文随笔集</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
     <!-- main container end -->
-    <script src="../js/navigation.js"></script>
+    <script src="../js/progressBar.js"></script>
+    <script>
+    $(function() {
+        var kitab={
+            bookName:'a book',
+            authorName:'Mila',
+            score:'9.9',
+            bookInfo:'weifowjfoiewjfioejwiofjewiofjewiofjeo'
+        };
+        var slidingBook='<div class="one-screen"><img src="../images/book.jpg"><div class="hot-book-info"><h1>'+kitab.bookName+'</h1><span>作者：</span><span>'+kitab.authorName+'</span><br><span>评分：</span><div class="hot-book-score">'+kitab.score+'</div><span>内容简介：</span><div class="hot-book-intro">'+kitab.bookInfo
+        +'</div></div></div>';
+        $('.slide-container').append(slidingBook);
+        $('.slide-container').append(slidingBook);
+        $('.slide-container').append(slidingBook);
+
+        setInterval(function() {
+            if (parseInt($('.slide-container').css('marginLeft')) == -2700) {
+                $('.slide-container').css('marginLeft', '225px');
+            }
+            $('.slide-container').animate({ marginLeft: '-=975px' }, 3000);
+        }, 6000);
+    });
+    </script>
 </body>
+
 </html>
