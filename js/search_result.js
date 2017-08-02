@@ -11,7 +11,7 @@ function tooltip() {
 		e.stopPropagation();
 		if($('.simple-info').html() == "") {
 			rq = {
-				isbn: $(this)[0].children[4].text()
+				isbn: $(this)[0].children[4].innerHTML
 			}
 
 			$.ajax({
@@ -37,13 +37,11 @@ function tooltip() {
 				        		"display": "block"
 
 				        	}).show("fast");
-				        $('.triangle').css("opacity","0");
 				}
 			});
 		} else {
 			$('.simple-info').html("")
 			.css("display","none");
-			$('.triangle').css("opacity","1");
 		}
 
 	})
