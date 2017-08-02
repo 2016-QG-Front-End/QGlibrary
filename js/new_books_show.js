@@ -37,3 +37,4 @@ $(function() {
         location.href = location.href + '?' + encodeURIComponent('search_text=' + type);
     })
 })
+

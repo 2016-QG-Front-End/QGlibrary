@@ -57,13 +57,13 @@ $(function() {
     var username = document.getElementById('username'),
         password = document.getElementById('password'),
         signUsername = document.getElementById('signInUsername'),
-        signPasswor = document.getElementById('signInPassword'),
+        signPassword = document.getElementById('signInPassword'),
         confirmPassword = document.getElementById('signInConfirmPassword'),
         regUser = /^[a-zA-Z0-9]{4,8}$/,
         regPass = /^[a-zA-Z0-9]{4,8}$/;
 
     $('#username').bind('keyup', function(e) {
-        var ev= window.event||e;
+        var ev = window.event || e;
 
         //13是键盘上面固定的回车键
         if (ev.keyCode == 13) {
@@ -78,7 +78,7 @@ $(function() {
     });
 
     $('#password').bind('keyup', function(e) {
-        var ev= window.event||e;
+        var ev = window.event || e;
 
         //13是键盘上面固定的回车键
         if (ev.keyCode == 13) {
@@ -95,7 +95,7 @@ $(function() {
     })
 
     $('#signInWsername').bind('keyup', function(e) {
-        var ev= window.event||e;
+        var ev = window.event || e;
 
         //13是键盘上面固定的回车键
         if (ev.keyCode == 13) {
@@ -114,29 +114,29 @@ $(function() {
     });
 
     $('#signInPassword').bind('keyup', function(e) {
-        var ev= window.event||e;
+        var ev = window.event || e;
 
         //13是键盘上面固定的回车键
         if (ev.keyCode == 13) {
             $('.sign-submit').trigger('click');
         }
 
-        if (!regUser.test(signPasswor.value)) {
-            $('#pasWarm').html('密码由4到8个数字或大小写字母组成').css("display", "block");
+        if (!regUser.test(signPassword.value)) {
+            $('#passWarm').html('密码由4到8个数字或大小写字母组成').css("display", "block");
         } else {
             $('#passWarm').html('').css("display", "none");
         }
     });
 
     $('#signInConfirmPassword').bind('keyup', function(e) {
-        var ev= window.event||e;
+        var ev = window.event || e;
 
         //13是键盘上面固定的回车键
         if (ev.keyCode == 13) {
             $('.sign-submit').trigger('click');
         }
 
-        if ((signPasswor.value) != confirmPassword.value) {
+        if ((signPassword.value) != confirmPassword.value) {
             $('#confirmPassWarm').html('密码不正确').css("display", "block");
         } else {
             $('#confirmPassWarm').html('').css("display", "none");
@@ -160,15 +160,17 @@ $(function() {
             regPass = /^[a-zA-Z0-9]{4,8}$/,
             obj = new Object();
 
-        obj.user = username.value;
-        obj.password = password.value;
-        e.preventDefault();
+        obj = {
+            user: username.value,
+            password: password.value
+        };
+ 
 
         if ((regUser.test(username.value)) && (regPass.test(password.value))) {
             $.ajax({
                 type: "post",
                 url: 'http://192.168.1.110:10086/login',
-                data: JSON.stringify(CreateJson(obj)),
+                data: JSON.stringify(obj),
                 dataType: "json",
                 async: false,
                 success: function(data) {
@@ -188,27 +190,14 @@ $(function() {
 })
 
 /**
- * [CreateJson 创建JSON数据的对象]
- * @param {[Object]} obj [存有账号密码等信息的对象]
- * return 返回一个对象
- */
-function CreateJson(obj) {
-    var account = new Object();
-    for (var i in obj) {
-        account[i] = obj[i];
-    }
-    return obj;
-}
-
-/**
  * [LogInChange 登录数据返回对数据的分析]
  * @param {[type]} data [json解析后的数据]
  */
 function LogInChange(data) {
-    alert("111");
+
     switch (data.status) {
         case 'true':
-            location.href = 'http://192.168.1.110:3306' + data.url;
+            location.href = data.url;
             break;
         case 'false':
             $('.log-in-error').html('用户名不存在或密码错误').css("display", "block");
@@ -221,16 +210,22 @@ function LogInChange(data) {
  * 
  */
 $(function() {
-    var signUsername = document.getElementById('signInUsername'),
-        regUser = /^[a-zA-Z0-9]{4,8}$/;
+    var username = document.getElementById('username'),
+        password = document.getElementById('password'),
+        signUsername = document.getElementById('signInUsername'),
+        signPassword = document.getElementById('signInPassword'),
+        confirmPassword = document.getElementById('signInConfirmPassword'),
+        regUser = /^[a-zA-Z0-9]{4,8}$/,
+        regPass = /^[a-zA-Z0-9]{4,8}$/;
 
     $('#signInUsername').bind('blur', function(argument) {
         if (!regUser.test(signUsername.value)) {
             $('#userWarm').html('用户名由4到8个数字或大小写字母组成').css("display", "block");
         } else {
             var obj = new Object();
-
-            obj.user = signUsername.value;
+            obj = {
+                user: signUsername.value
+            };
 
             $.ajax({
                 type: "post",
@@ -255,7 +250,7 @@ $(function() {
  * 
  */
 function hasUser(data) {
-    if (!data.status) {
+    if (data.status == 'false') {
         $('.has-user').css({
             'display': 'block',
             'background': 'url(../images/right.png)  no-repeat #fff',
@@ -264,8 +259,9 @@ function hasUser(data) {
     } else {
         $('.has-user').css({
             'display': 'block',
-            'background': 'url(../images/log_in_err.png) 0px -60px no-repeat #fff',
-            'backgroundSize': ''
+            'background': 'url(../images/log_in_err.png)  no-repeat #fff',
+            'backgroundSize': '16px 54px',
+            'backgroundPosition': '0 -39px'
         }).html('用户名已经存在');
     };
 }
@@ -277,12 +273,22 @@ function hasUser(data) {
  *
  */
 $(function() {
-    $('.sign-submit').bind('click', function(e) {
-        if ((regUser.test(signUsername.value)) && (regUser.test(signPasswor.value)) && ((signPasswor.value) == confirmPassword.value) && ($('#has-warm').text() == '用户名可用')) {
+    var username = document.getElementById('username'),
+        password = document.getElementById('password'),
+        signUsername = document.getElementById('signInUsername'),
+        signPassword = document.getElementById('signInPassword'),
+        confirmPassword = document.getElementById('signInConfirmPassword'),
+        regUser = /^[a-zA-Z0-9]{4,8}$/,
+        regPass = /^[a-zA-Z0-9]{4,8}$/;
+
+    document.getElementById("signSubmit").onclick = function() {
+        if ((regUser.test(signUsername.value)) && (regUser.test(signPassword.value)) && ((signPassword.value) == confirmPassword.value) && ($('#hasWarm').text() == '用户名可用')) {
             var obj = new Object();
 
-            obj.user = $('#signInUsername').val();
-            obj.password = $('#signInPassword').val();
+            obj = {
+                user: $('#signInUsername').val(),
+                password: $('#signInPassword').val()
+            };
 
             $.ajax({
                 type: "post",
@@ -305,7 +311,10 @@ $(function() {
             $('#signInConfirmPassword').trigger('keyup');
             $('#signInUsername').trigger('blur');
         }
-    })
+
+
+    }
+
 })
 
 /**
