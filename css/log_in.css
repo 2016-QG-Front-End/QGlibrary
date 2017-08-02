@@ -113,7 +113,7 @@ body {
     font-size: 12px;
     text-decoration: none;
 
-    color: #8bc24a;
+    color: #9C27B0;
 }
 .forget-password a:hover {
     text-decoration: underline;
@@ -148,10 +148,10 @@ body {
 }
 .sign-in-form-data input:focus,
 .log-in-form-data input:focus {
-    border: 1px solid #8bc24a;
+    border: 1px solid #9C27B0;
 
     outline: none;
-    box-shadow: 0 0 10px #8bc24a;
+    box-shadow: 0 0 10px #9C27B0;
 
     -webkit-transition: box-shadow .25s linear 0s;
             transition: box-shadow .25s linear 0s;
@@ -176,7 +176,7 @@ body {
     text-align: center;
 
     color: #fff;
-    background-color: #8bc24a;
+    background-color: #9C27B0;
 
     cursor: pointer;
 }
@@ -272,7 +272,7 @@ body {
 .change-sign-in {
     margin-left: 6px;
 
-    color: #8bc24a;
+    color: #9C27B0;
 }
 .change-log-in:hover,
 .change-sign-in:hover {
