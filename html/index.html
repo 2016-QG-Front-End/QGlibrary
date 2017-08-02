@@ -5,16 +5,19 @@
     <meta charset="utf-8">
     <title>QG library</title>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/navigation.css">
+    <link rel="stylesheet" href="../css/slider.css">
     <link rel="stylesheet" href="../css/new_books_show.css">
     <link rel="stylesheet" href="../css/popular_book.css">
+    <link rel="stylesheet" href="../css/person_recommend.css">
 </head>
 
 <body>
     <div id="progress"><span></span></div>
     <div class="navigation">
         <div class="inner-navigation">
-            <div class="logo"><img src="../images/logo.png">
+            <div class="logo">
+                <img src="../images/logo.png">
                 <a>
                     <font>QG</font> Library</a>
             </div>
@@ -27,6 +30,10 @@
                     <div id="userName">QG Read</div>
                     <div class="logout" onclick="#">注销</div>
                 </div>
+            </div>
+            <div class="search">
+                <input id="search" name="search" type="text" placeholder="请输入书名、作者名或类别">
+                <button class="button"></button>
             </div>
         </div>
     </div>
@@ -128,6 +135,7 @@
                 <div class="line-ul"></div>
             </ul>
             <!-- end 左边推荐新书 -->
+           
         </div>
         <!-- 热门图书 -->
         <div class="popular-books">
@@ -137,12 +145,58 @@
             </ul>
         </div>
         <!-- end 热门图书 -->
+
+        <!-- 个人推荐及信息 -->
+        <div class="person-recommend">
+            
+            <!-- 私人推荐 -->
+            <div class="person-book">
+                <h2>个人推荐</h2>
+                <div class="line-recommend-book"></div>
+                <ul  class="person-recommend-book">
+
+                </ul>
+                
+            </div>
+            <!-- end 私人推荐 -->
+            <!-- 个人信息 -->
+
+            <div class="person-data" id="personPieChart">
+                
+            </div>
+            <!-- end 个人信息 -->
+            <div class="person-chart"></div>
+        </div>
+        <!-- end 个人推荐及信息 -->
     </div>
     <!-- main container end -->
+    <div class="footer">
+        <div class="container">
+            <div class="left-box">
+                <div class="footer-logo">
+                    <div class="logo"></div>
+                    <a>
+                        <font>QG</font> Library</a>
+                </div>
+                <div class="site-info">
+                    <p>为了⽅便⼯作室成员搜索查阅各类书籍，以及预测各位同学的阅读习惯，⼤家决定开发⼀个相关的书籍推荐⽹站。 ⽹站将利⽤爬⾍爬取⾖瓣的书籍数据，同时利⽤各位同学的搜索记录来为同学们推荐相关的书籍。</p>
+                </div>
+            </div>
+            <div class="links">
+                <h4>友情链接</h4>
+                <a href="https://www.douban.com/" target="_blank">豆瓣</a>
+                <a href="https://book.douban.com/" target="_blank">豆瓣读书</a>
+                <a href="http://www.iconfont.cn/" target="_blank">阿里巴巴Iconfont</a>
+            </div>
+            <p class="copy">&copy; 2017 QG studio all rights reserved.</p>
+        </div>
+    </div>
     <script src="../js/jquery_3.2.1/jquery_3.2.1.min.js"></script>
+    <script src="../js/ECharts/echarts.min.js"></script>
     <script src="../js/navigation.js"></script>
     <!--     <script src="../js/new_books_show.js"></script>
     <script src="../js/popular_book.js"></script> -->
+    <script src="../js/person_recommend.js"></script>
     <script src="../js/progressBar.js"></script>
     <script>
     $(function() {

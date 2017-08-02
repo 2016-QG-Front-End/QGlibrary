@@ -1,0 +1,68 @@
+/** 个人图书 **/
+
+.person-book > h2 {
+    margin: 16px auto 5px auto;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    color: #9C27B0;
+}
+
+.line-recommend-book {
+    width: 600px;
+    height: 1px;
+
+    background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+}
+/*** 私人推荐 ***/
+/*.person-book {
+    float: right;
+
+}*/
+.person-recommend-book {
+    float: left;
+
+    list-style: none;
+
+    margin-top: 0;
+    padding: 0;
+    width: 610px;
+}
+
+.person-recommend-book li {
+    display: inline-block;
+
+    margin-top: 12px;
+    padding-left: 10px;
+}
+
+.person-recommend-book li a {
+    float: left;
+}
+.person-recommend-book li a img {
+    width: 100px;
+}
+.person-recommend-book li div  h4,
+.pperson-recommend-book li div p {
+    margin: 13px 0;;
+}
+
+.person-recommend-book li div p > i {
+    font-size: 22px;
+}
+.person-recommend-book li div p:nth-child(2) {
+    color: #e09015;
+}
+.person-recommend-book li div {
+    width: 290px;
+}
+/*** end 私人推荐 ***/
+/*** 个人数据 ***/
+.person-data {
+    width: 590px;
+    height: 440px;
+    float: right;
+}
+/*** end 个人数据 ***/
+/** end 个人图书 **/
