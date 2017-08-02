@@ -26,11 +26,11 @@ var myChart = echarts.init(document.getElementById('personPieChart'));
                 radius: ['50%', '70%'],
                 avoidLabelOverlap: false,
                 data: [
-                    {value: 100, name: 'DOTA2'},
-                    {value: 110, name: 'LOL'},
-                    {value: 200, name: '绝地大逃杀'},
-                    {value: 80, name: '彩虹6号'},
-                    {value: 50, name: '杀手6'}
+                    {value: 0, name: 'DOTA2'},
+                    {value: 0, name: 'LOL'},
+                    {value: 0, name: '绝地大逃杀'},
+                    {value: 0, name: '彩虹6号'},
+                    {value: 0, name: '杀手6'}
                 ],
 
                 label: {

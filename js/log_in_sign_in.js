@@ -62,7 +62,14 @@ $(function() {
         regUser = /^[a-zA-Z0-9]{4,8}$/,
         regPass = /^[a-zA-Z0-9]{4,8}$/;
 
-    $('#username').bind('keyup', function() {
+    $('#username').bind('keyup', function(e) {
+        var ev= window.event||e;
+
+        //13是键盘上面固定的回车键
+        if (ev.keyCode == 13) {
+            $('.log-submit').trigger('click');
+        }
+
         if (!regUser.test(username.value)) {
             $('.log-in-error').html('用户名由4到8个数字或大小写字母组成').css("display", "block");
         } else {
@@ -70,7 +77,14 @@ $(function() {
         }
     });
 
-    $('#password').bind('keyup', function() {
+    $('#password').bind('keyup', function(e) {
+        var ev= window.event||e;
+
+        //13是键盘上面固定的回车键
+        if (ev.keyCode == 13) {
+            $('.log-submit').trigger('click');
+        }
+
         if ($('.log-in-error').html() != '用户名由4到8个数字或大小写字母组成') {
             if (!regPass.test(password.value)) {
                 $('.log-in-error').html('密码由4到8个数字或大小写字母组成').css("display", "block");
@@ -80,7 +94,14 @@ $(function() {
         }
     })
 
-    $('#signInWsername').bind('keyup', function() {
+    $('#signInWsername').bind('keyup', function(e) {
+        var ev= window.event||e;
+
+        //13是键盘上面固定的回车键
+        if (ev.keyCode == 13) {
+            $('.sign-submit').trigger('click');
+        }
+
         if (!regUser.test(signUsername.value)) {
             $('#userWarm').html('用户名由4到8个数字或大小写字母组成').css("display", "block");
         } else {
@@ -92,7 +113,14 @@ $(function() {
         });
     });
 
-    $('#signInPassword').bind('keyup', function() {
+    $('#signInPassword').bind('keyup', function(e) {
+        var ev= window.event||e;
+
+        //13是键盘上面固定的回车键
+        if (ev.keyCode == 13) {
+            $('.sign-submit').trigger('click');
+        }
+
         if (!regUser.test(signPasswor.value)) {
             $('#pasWarm').html('密码由4到8个数字或大小写字母组成').css("display", "block");
         } else {
@@ -100,7 +128,14 @@ $(function() {
         }
     });
 
-    $('#signInConfirmPassword').bind('keyup', function() {
+    $('#signInConfirmPassword').bind('keyup', function(e) {
+        var ev= window.event||e;
+
+        //13是键盘上面固定的回车键
+        if (ev.keyCode == 13) {
+            $('.sign-submit').trigger('click');
+        }
+
         if ((signPasswor.value) != confirmPassword.value) {
             $('#confirmPassWarm').html('密码不正确').css("display", "block");
         } else {
