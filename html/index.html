@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/new_books_show.css">
     <link rel="stylesheet" href="../css/popular_book.css">
+    <link rel="stylesheet" href="../css/person_recommend.css">
 </head>
 
 <body>
@@ -128,6 +129,7 @@
                 <div class="line-ul"></div>
             </ul>
             <!-- end 左边推荐新书 -->
+           
         </div>
         <!-- 热门图书 -->
         <div class="popular-books">
@@ -137,12 +139,84 @@
             </ul>
         </div>
         <!-- end 热门图书 -->
+
+        <!-- 个人推荐及信息 -->
+        <div class="person-recommend">
+            
+            <!-- 私人推荐 -->
+            <div class="person-book">
+                <h2>个人推荐</h2>
+                <div class="line-recommend-book"></div>
+                <ul  class="person-recommend-book">
+                    <!-- <li>
+                        <a href="">
+                            <img src="https://img3.doubanio.com/lpic/s29476260.jpg">
+                        </a>
+                        <div>
+                            <h4>雪落香杉树</h4>
+                            <p class="evaluate">评分：<i>8.7</i></p>
+                            <p class="book-writer">[美] 戴维·伽特森</p>
+                            <p class="category ">小说 / 美国文学</p>
+                            <p class="cntent-abstract">一位默默无闻的美国中学教师，用十年时间写下</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="https://img3.doubanio.com/lpic/s29476260.jpg">
+                        </a>
+                        <div>
+                            <h4>雪落香杉树</h4>
+                            <p class="evaluate">评分：<i>8.7</i></p>
+                            <p class="book-writer">[美] 戴维·伽特森</p>
+                            <p class="category ">小说 / 美国文学</p>
+                            <p class="cntent-abstract">一位默默无闻的美国中学教师，用十年时间写下</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="https://img3.doubanio.com/lpic/s29476260.jpg">
+                        </a>
+                        <div>
+                            <h4>雪落香杉树</h4>
+                            <p class="evaluate">评分：<i>8.7</i></p>
+                            <p class="book-writer">[美] 戴维·伽特森</p>
+                            <p class="category ">小说 / 美国文学</p>
+                            <p class="cntent-abstract">一位默默无闻的美国中学教师，用十年时间写下</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="https://img3.doubanio.com/lpic/s29476260.jpg">
+                        </a>
+                        <div>
+                            <h4>雪落香杉树</h4>
+                            <p class="evaluate">评分：<i>8.7</i></p>
+                            <p class="book-writer">[美] 戴维·伽特森</p>
+                            <p class="category ">小说 / 美国文学</p>
+                            <p class="cntent-abstract">一位默默无闻的美国中学教师，用十年时间写下</p>
+                        </div>
+                    </li>  -->
+                </ul>
+                
+            </div>
+            <!-- end 私人推荐 -->
+            <!-- 个人信息 -->
+            
+            <div class="person-data" id="personPieChart">
+                
+            </div>
+            <!-- end 个人信息 -->
+            <div class="person-chart"></div>
+        </div>
+        <!-- end 个人推荐及信息 -->
     </div>
     <!-- main container end -->
     <script src="../js/jquery_3.2.1/jquery_3.2.1.min.js"></script>
+    <script src="../js/ECharts/echarts.min.js"></script>
     <script src="../js/navigation.js"></script>
     <!--     <script src="../js/new_books_show.js"></script>
     <script src="../js/popular_book.js"></script> -->
+    <script src="../js/person_recommend.js"></script>
     <script src="../js/progressBar.js"></script>
     <script>
     $(function() {
