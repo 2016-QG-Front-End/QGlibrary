@@ -1,65 +1,28 @@
  body {
         margin: 0;
-        background-color: #f6f6f6;
     }
-/**搜索框**/
-	#search {
-		display: block;
-		float: right;
 
-		margin:11px 20px;
-		border:0.1px solid #d4d2d2;
-		border-radius: 3px;
-		padding: 0 0 0 5px;
-		width:300px;
-		height:39px;
-       
-        outline-color: #8bc24a; 
-
-		background: #f6f6f6;
-
-	}
-
-	.button {
-		display: inline-block;
-		position: relative;
-		top:16px;
-		left:780px;
-
-		border:none;
-		width:32px;
-		height:32px;
-
-		outline: none;
-		cursor: pointer;
-
-		background: url(../images/search.png);
-
-	}
-/**end 搜索框**/
 
 /**搜索结果**/
     .container {
-    	position: relative;
-		margin: 80px auto 0;
-		padding:20px 0;
+        margin:120px auto;
+
         width: 1200px;
-        height: 1600px;
+
         background: white;
-        box-shadow: 0 6px 15px rgba(36, 37, 38, .08);
-        transition: box-shadow .25s ease, transform .25s ease;
+        /*box-shadow: 0 6px 15px rgba(36, 37, 38, .08);*/
+        /*transition: box-shadow .25s ease, transform .25s ease;*/
     }
 
     .status {
-    	margin-left: 20px;
 
     	font-size: 13px;
     	color:grey;
     }
 
     .in-container {
-    	width:1050px;
     	margin:30px auto;
+    	padding: 0;
     }
 
 	.in-container::after {
@@ -68,20 +31,22 @@
 		clear:both;
 	}
 
+    /***加载的图片数***/
     .index {
     	display: none;
     }
+	/***end***/
 
 	.main-info {
 		position: relative;
 		display: inline-block;
 		float:left;
 		
-		margin:15px;
+		margin:10px;
 		padding-top:10px;
 		width:180px;
 
-		background-color: rgba(139, 194, 74, .1);
+		background-color: #f3f3f3;
 		text-align: center;
 	}
 	
@@ -100,7 +65,7 @@
 		top:-10px;
 		left:145px;
 
-		border-bottom: 35px solid #e3efd4;
+		border-bottom: 35px solid #e2e2e1;
 		border-right: 35px solid #fff;
 		width: 0;
 		height: 0;
@@ -109,13 +74,15 @@
 	.main-info:hover::before {
 		opacity: 0;
 	}
+
+
 	
 	.triangle {
 		position: relative;
 		top:-10px;
 		left:145px;
 
-		border-bottom: 35px solid #e3efd4;
+		border-bottom: 35px solid #e2e2e1;
 		border-right: 35px solid #fff;
 		width: 0;
 		height: 0;
@@ -150,15 +117,19 @@
 
 		background: url(../images/star_on.png);
     }
+
+    .isbn {
+    	display: none;
+    }
 /**end 搜索结果**/
 
-/** 简介 **/
+/** 弹出的简介 **/
 .simple-info {
 	position: absolute;
-
+	display: none;
 
 	border:1px solid #d6cec3;
-	padding:0 20px; 
+	padding:10px 20px;
 	width:400px;
 
 	color:#676666;
@@ -176,5 +147,22 @@
 }
 
 .simple-info a {
-	text-align: right;
+	display: inline-block;
+
+	border-radius: 5px;
+	margin:25px 0;
+	padding:5px;
+	
+	text-decoration: none;
 }
+
+.simple-info a:visited, .simple-info a:link {
+	color:grey;
+	border: 0.2px solid grey;
+}
+
+.simple-info a:hover, .simple-info a:active {
+	color:#bbb7b7;
+	border: 0.2px solid #bbb7b7;
+}
+/** end弹出的简介 **/

@@ -1,31 +1,70 @@
 $(document).ready(function() {
 	tooltip();
+	esc();
 
 })
-
+/**
+ * [弹出简介]
+ */
 function tooltip() {
-	$('.main-info').mouseover(function(e) {
-		var tooltip = '<div class="simple-info">'
-            + '<h5>作者简介</h5>'
-            + '<p>米原万里（1950-2006），日本作家，文化学者，俄语翻译。早年就读于布拉格的学校，返回日本后长年从事驻外俄语翻译工作，并发表多部文学作品。作品多与日俄文化交流相关，著有《旅行者的早餐》《奥尔加·莫里索普娜的反话》《米原万里的口译现场》等。</p>'
-            + '<h5>内容简介</h5>'
-            + '<p>《旅行者的早餐》是作家米原万里的美食美文随笔集。'
-            + '人类舌尖上永远住着一对好邻居，深厚的文化和有趣的笑话。米原万里身为知名俄语翻译家，也是赫赫有名的“毒舌美人”，自如地游走在欧亚大陆，记录下爆笑吐槽的舌尖之旅。'
-            +'</p>'
-            + '<a href="www.ffafa.com">去买书</a>'
-            + '<p>◄</p>'
-        + '</div>'
-        $('body').append(tooltip);
-        $('.simple-info')
-        	.css({
-        		"top": e.pageY + "px",
-        		"left": e.pageX + "px"
-        	}).show("fast");
-	}).mouseout(function(){
-		$('.simple-info').remove();
+	$('.main-info').click(function(e) {
+		e.stopPropagation();
+		if($('.simple-info').html() == "") {
+			rq = {
+				isbn: $(this)[0].children[4].text()
+			}
+
+			$.ajax({
+				type:"POST",
+				url:"",
+				contentType:"application/json; charset=utf-8",
+				data: JSON.stringify(rq),
+				dataType: "json",
+				async: false,
+				success: function(data) {
+					var tooltip = 
+			             '<h5>作者简介</h5>'
+			            + '<p>' + data.book.aboutwrite.substring(0, 100) + '</p>'
+			            + '<h5>内容简介</h5>'
+			            + '<p>' + data.book.content.substring(0, 100) + '</p>'
+			            + '<a href="www.ffafa.com">去买书</a>'
+
+				        $('.simple-info').html(tooltip);
+				        $('.simple-info')
+				        	.css({
+				        		"top": e.pageY + "px",
+				        		"left": e.pageX + "px",
+				        		"display": "block"
+
+				        	}).show("fast");
+				        $('.triangle').css("opacity","0");
+				}
+			});
+		} else {
+			$('.simple-info').html("")
+			.css("display","none");
+			$('.triangle').css("opacity","1");
+		}
+
 	})
 }
 
+/**
+ * [点击其他地方收起简介]
+ */
+function esc() {
+	$(window).click(function() {
+		if($('.simple-info').html() != '') {
+			$('.simple-info')
+				.html("")
+				.css("display","none");
+		}
+	})
+}
+
+/**
+ * [监听滚动条]
+ */
 function scrollBottom() {
 	$(window).scroll(function() {
 		var viewH = $(window).height();
@@ -39,20 +78,23 @@ function scrollBottom() {
 	})
 }
 
+/**
+ * [请求搜索结果加载图片]
+ */
 function result() {
 	var search = decodeURI(window.location.search);
 	var qs = (search.length > 0 ? search.substring(1) : '');
 	var key = decodeURIComponent(qs.split('&')[0].split('=')[1]);
-	var request = {
-		"datas" = key,
-		"index" = $('.index').text()
+	var rq = {
+		"datas" : key,
+		"index" : $('.index').text()
 	};
 
 	$.ajax({
 		type:"POST",
 		url:"",
 		contentType:"application/json; charset=utf-8",
-		data: JSON.stringify(key),
+		data: JSON.stringify(rq),
 		dataType: "json",
 		async: false,
 		success: function(data) {
@@ -67,10 +109,12 @@ function result() {
 		            +   '<p class="book-writer">作者:'+ books[i].author +'</p>'
 		            +   '<div class="evaluate">'
 		            +       '<div class="on"></div>'
-		            +   '</div>'         
+		            +   '</div>'
+		            +	'<p class="isbn">' + books[i].isbn + '</p>'          
 
 		        	$('<li>').addClass('main-info').html(str).appendTo($('.in-container'));
 		        	$('.on').css("width", ((books.rating)/10)*5*16);
+		        	$('.isbn').css("display","none");
 				} 
 		        $('.index').text(parseInt($('.index').text()) + books.length);				
 			} else {
