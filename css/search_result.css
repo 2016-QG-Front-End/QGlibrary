@@ -3,82 +3,6 @@
         background-color: #f6f6f6;
     }
 /**导航**/
-    .navigation {
-        position: fixed;
-        top: 0px;
-        height: 60px;
-        width: 100%;
-        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
-        background: white;
-        border-bottom: 1px solid transparent;
-    }
-
-    .inner {
-        width: 1200px;
-        height: 60px;
-        margin: 0 auto;
-        /*   	border-right: 1px dashed;
-    	border-left: 1px dashed;*/
-    }
-
-    .logo {
-        float: left;
-        width: 200px;
-        height: 60px;
-        /*border:dashed 1px;*/
-        /*background: url(logo.png);*/
-        background-size: 100% 100%;
-    }
-    .logo h1{
-    	float: right;
-    	width: 140px;
-    	text-align: left;
-        font-size:25px;
-        /*border:dashed 1px;*/
-    }
-	.logo img {
-		float: left;
-		width: 60px;
-	}
-    .login-div {
-        float: right;
-        width: 160px;
-        height: 60px;
-        text-align: right;
-        /*border:dashed 1px;*/
-        line-height: 60px;
-    }
-	.login-div span{
-		display: inline-block;
-		height: 35px;
-		width: 50px;
-		border-radius: 5px;
-		text-align: center;
-		line-height: 35px;
-	}
-	.login-div span:hover {
-		background-color: #ffa000;
-		color: white;
-		cursor: pointer;
-	}
-	.login-div img{
-		float: left;
-		margin-top: 10px;
-		height: 40px;
-		width: 40px;
-		border-radius: 50%;
-	}
-	.login-div img:hover {
-		margin-top: 9px;
-		border:solid #ffa000 2px;
-	}
-	.login-div .user-name {
-		width: 100px;
-		font-size:20px;
-		color: #424242;
-		float:right;
-	}
-
 	#search {
 		display: block;
 		float: right;
@@ -113,37 +37,97 @@
 
 	}
 /**end 导航**/
-    .container {
 
-        margin: 0 auto;
-        /*border-radius: 10px;*/
-        padding:80px 0 30px 0;
+/**搜索结果**/
+    .container {
+		margin: 80px auto 0;
+		padding:20px 0;
         width: 1200px;
         height: 1600px;
         background: white;
-        box-shadow: 0 6px 15px rgba(36, 37, 38, 0.08);
-        transition: box-shadow 0.25s ease, transform 0.25s ease;
+        box-shadow: 0 6px 15px rgba(36, 37, 38, .08);
+        transition: box-shadow .25s ease, transform .25s ease;
+    }
+
+    .in-container {
+    	width:1050px;
+    	margin:30px auto;
+    }
+
+    .status {
+    	margin-left: 20px;
+
+    	font-size: 13px;
+    	color:grey;
     }
 	
 	.main-info {
+		position: relative;
 		display: inline-block;
+		float:left;
+		
+		margin:15px;
+		padding-top:10px;
+		width:180px;
 
-		width:300px;
-		height:350px;
-
+		background-color: rgba(139, 194, 74, .1);
 		text-align: center;
 	}
 	
 
 	.main-info img {
-		width:150px;
+		margin-right: 5px;
+		height:198px;
 
+		vertical-align:top;
+	}
+
+	.main-info::before {
+		content:"";
+		display: block;
+		position: relative;
+		top:-10px;
+		left:145px;
+
+		border-bottom: 35px solid #e3efd4;
+		border-right: 35px solid #fff;
+		width: 0;
+		height: 0;
+	}
+
+	.main-info:hover::before {
+		opacity: 0;
+	}
+	
+	.triangle {
+		position: relative;
+		top:-10px;
+		left:145px;
+
+		border-bottom: 35px solid #e3efd4;
+		border-right: 35px solid #fff;
+		width: 0;
+		height: 0;
+
+		cursor: pointer;
+	}
+
+	.book-name {
+		margin:0;
+
+		font-size: 18px;
+		font-weight: bold;
+
+	}
+	
+	.book-writer {
+		font-size: 12px;
 	}
 
     .evaluate {
+    	margin:15px auto;
     	width:80px;
     	height:16px;
-    	margin:10px auto;
 
     	background: url(../images/star_off.png);
     	background-position: center;
@@ -155,3 +139,4 @@
 
 		background: url(../images/star_on.png);
     }
+/**end 搜索结果**/

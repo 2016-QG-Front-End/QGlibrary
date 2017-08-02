@@ -5,63 +5,127 @@
     <meta charset="utf-8">
     <title>QG library</title>
     <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/search_result.css">
     <link rel="stylesheet" href="../css/normalize.css">
 
 </head>
 
 <body>
+    <div id="progress"><span></span></div>
     <div class="navigation">
-        <div class="inner">
-            <div class="logo"><img src="../images/logo2.png"><h1>QG Library</h1></div>
-            <div class="login-div">
-                <!-- <span>登录</span>
-                
-                <span>注册</span> -->
-				<img src="../images/avatar.png">
-				<div class="user-name">QG Read</div>
+        <div class="inner-navigation">
+            <div class="logo"><img src="../images/logo.png">
+                <a>
+                    <font>QG</font> Library</a>
+            </div>
+            <div class="login-state">
+                <div id="logOrReg">
+                    <a href="#">登录</a>|<a href="#">注册</a>
+                </div>
+                <div id="userInfo">
+                    <img id="userHead" src="../images/avatar.png">
+                    <div id="userName">QG Read</div>
+                    <div class="logout" onclick="#">注销</div>
+                </div>
             </div>
             <div class="search">
-            	<input id="search" name="search" type="text" placeholder="请输入书名、作者名或类别">
-            	<button class="button"></button>
+                <input id="search" name="search" type="text" placeholder="请输入书名、作者名或类别">
+                <button class="button"></button>
             </div>
         </div>
     </div>
+
     <div class="container">
-    	<div class="main-info">	
-    		<h3 class="book-name">旅行者的早餐</h3>
-			<img src="../images/book.jpg" alt="">
-			<div class="book-writer">作者：[日] 米原万里 </div>
-			<div class="evaluate">
-				<div class="on">
-			</div>
-    	</div>
-    	<div class="main-info">	
-    		<h3 class="book-name">旅行者的早餐</h3>
-			<img src="../images/book.jpg" alt="">
-			<div class="book-writer">作者：[日] 米原万里 </div>
-			<div class="evaluate">
-				<div class="on">
-			</div>
-    	</div>
-    	<div class="main-info">	
-    		<h3 class="book-name">旅行者的早餐</h3>
-			<img src="../images/book.jpg" alt="">
-			<div class="book-writer">作者：[日] 米原万里 </div>
-			<div class="evaluate">
-				<div class="on">
-			</div>
-    	</div>
-    	<div class="main-info">	
-    		<h3 class="book-name">旅行者的早餐</h3>
-			<img src="../images/book.jpg" alt="">
-			<div class="book-writer">作者：[日] 米原万里 </div>
-			<div class="evaluate">
-				<div class="on">
-			</div>
-    	</div>
+        <p class="status">为你找到以下结果：</p>
+        <ul class="in-container">
+        	<li class="main-info">	
+    			<img src="../images/book.jpg" title="旅行者的早餐">
+                <p class="book-name">旅行者的早餐</p>
+                <p class="book-writer">作者:[日] 米原万里 </p>
+                <div class="evaluate">
+                    <div class="on"></div>
+                </div>         
+        	</li>
+            <li class="main-info">  
+                <img src="../images/book2.jpg" alt="">
+                <p class="book-name">幽灵</p>
+                <p class="book-writer">作者:[挪威] 尤·奈斯博</p>
+                <div class="evaluate">
+                    <div class="on"></div>
+                </div>        
+            </li>
+            <li class="main-info"> 
+                <img src="../images/book3.jpg" alt="">
+                <p class="book-name">新管理革命</p>
+                <p class="book-writer">[美]戴维·布尔库什</p>
+                <div class="evaluate">
+                    <div class="on"></div>
+                </div>        
+            </li>
+            <li class="main-info"> 
+                <img src="../images/book.jpg" alt="">
+                <p class="book-name">旅行者的早餐</p>
+                <p class="book-writer">作者:[日] 米原万里 </p>
+                <div class="evaluate">
+                    <div class="on"></div>
+                </div>         
+            </li>
+            <li class="main-info">   
+                <img src="../images/book2.jpg" alt="">
+                <p class="book-name">幽灵</p>
+                <p class="book-writer">作者:[挪威] 尤·奈斯博</p>
+                <div class="evaluate">
+                    <div class="on"></div>
+                </div>        
+            </li>
+            <li class="main-info"> 
+                <img src="../images/book3.jpg" alt="">
+                <p class="book-name">新管理革命</p>
+                <p class="book-writer">[美]戴维·布尔库什</p>
+                <div class="evaluate">
+                    <div class="on"></div>
+                </div>        
+            </li>
+            <li class="main-info"> 
+                <img src="../images/book.jpg" alt="">
+                <p class="book-name">旅行者的早餐</p>
+                <p class="book-writer">作者:[日] 米原万里 </p>
+                <div class="evaluate">
+                    <div class="on"></div>
+                </div>         
+            </li>
+            <li class="main-info">   
+                <img src="../images/book2.jpg" alt="">
+                <p class="book-name">幽灵</p>
+                <p class="book-writer">作者:[挪威] 尤·奈斯博</p>
+                <div class="evaluate">
+                    <div class="on"></div>
+                </div>        
+            </li>
+            <li class="main-info"> 
+                <img src="../images/book3.jpg" alt="">
+                <p class="book-name">新管理革命</p>
+                <p class="book-writer">[美]戴维·布尔库什</p>
+                <div class="evaluate">
+                    <div class="on"></div>
+                </div>        
+            </li>
+            <li class="main-info"> 
+                <img src="../images/book.jpg" alt="">
+                <p class="book-name">旅行者的早餐</p>
+                <p class="book-writer">作者:[日] 米原万里 </p>
+                <div class="evaluate">
+                    <div class="on"></div>
+                </div>         
+            </li>
+            <!--<div class="simple-info">
+                <p>◄</p>
+            </div> -->
+        </ul>
     </div>
-    <script src="../js/main.js"></script>
+    <script src="../js/search_result.js"></script>
+    <script src="../js/navigation.js"></script>
 </body>
 
 </html>
