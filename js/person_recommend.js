@@ -74,7 +74,7 @@ $(function() {
             dataType: "json",
             async: false,
             success: function(data) {
-                CreatePie(data.ratio)
+                createPie(data.ratio)
             },
             error: function(xhr, status, errorThrowm) {
                 alert("错误" + status + "错误抛出：" + errorThrowm);
@@ -85,10 +85,10 @@ $(function() {
 })
 
 /**
- * [CreatePie 獲取图表数据并创建个人数据]
+ * [createPie 獲取图表数据并创建个人数据]
  * @param {[Array]} data [个人搜索新]
  */
-function CreatePie (data) {
+function createPie (data) {
     var leg = [],
         serDa = [];
 
@@ -131,7 +131,7 @@ $(function() {
             dataType: "json",
             async: false,
             success: function(data) {
-                CreateRecBook(data.books)
+                createRecBook(data.books)
             },
             error: function(xhr, status, errorThrowm) {
                 alert("错误" + status + "错误抛出：" + errorThrowm);
@@ -139,7 +139,12 @@ $(function() {
         });
     }
 })
-function CreateRecBook(arr) {
+/**
+ * [createRecBook 创建个人推荐书单]
+ * @param  {[Array]} arr [一个包含多本书信息的数组]
+ * 
+ */
+function createRecBook(arr) {
     for (var i in arr) {
          var oLi = '<li><a href=""><img src="' + arr[i].pictrue + '"></a><div><h4>' + arr[i].name + '</h4><p class="evaluate">评分：<i>' + arr[i].rating + '</i></p><p class="book-writer">' + arr[i].author + '</p><p class="category ">' + arr[i].类别 + '</p><p class="cntent-abstract">' + arr[i].内容简介 + '</p></div></li>';
 

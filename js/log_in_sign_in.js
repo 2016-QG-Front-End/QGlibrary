@@ -174,7 +174,7 @@ $(function() {
                 dataType: "json",
                 async: false,
                 success: function(data) {
-                    LogInChange(data);
+                    logInChange(data);
                 },
                 error: function(xhr, status, errorThrowm) {
                     alert("错误" + status + "错误抛出：" + errorThrowm);
@@ -190,10 +190,10 @@ $(function() {
 })
 
 /**
- * [LogInChange 登录数据返回对数据的分析]
+ * [logInChange 登录数据返回对数据的分析]
  * @param {[type]} data [json解析后的数据]
  */
-function LogInChange(data) {
+function logInChange(data) {
 
     switch (data.status) {
         case 'true':
