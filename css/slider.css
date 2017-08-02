@@ -14,7 +14,7 @@
         height: 400px;
         background-color: #8bc24a;
         overflow: hidden;
-        /*background: url(../images/sliderBack.jpg);*/
+        background: url(../images/sliderBack.jpg);
     }
 
     .slide-container {
