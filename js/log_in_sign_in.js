@@ -83,7 +83,7 @@ $(function() {
         //13是键盘上面固定的回车键
         if (ev.keyCode == 13) {
             $('.log-submit').trigger('click');
-        }
+        };
 
         if ($('.log-in-error').html() != '用户名由4到8个数字或大小写字母组成') {
             if (!regPass.test(password.value)) {
@@ -91,7 +91,7 @@ $(function() {
             } else {
                 $('.log-in-error').css("display", "none");
             }
-        }
+        };
     })
 
     $('#signInWsername').bind('keyup', function(e) {
@@ -100,13 +100,13 @@ $(function() {
         //13是键盘上面固定的回车键
         if (ev.keyCode == 13) {
             $('.sign-submit').trigger('click');
-        }
+        };
 
         if (!regUser.test(signUsername.value)) {
             $('#userWarm').html('用户名由4到8个数字或大小写字母组成').css("display", "block");
         } else {
             $('#userWarm').html('').css("display", "none");
-        }
+        };
 
         $('.has-user').css({
             'display': 'none'
@@ -119,13 +119,13 @@ $(function() {
         //13是键盘上面固定的回车键
         if (ev.keyCode == 13) {
             $('.sign-submit').trigger('click');
-        }
+        };
 
         if (!regUser.test(signPassword.value)) {
             $('#passWarm').html('密码由4到8个数字或大小写字母组成').css("display", "block");
         } else {
             $('#passWarm').html('').css("display", "none");
-        }
+        };
     });
 
     $('#signInConfirmPassword').bind('keyup', function(e) {
@@ -134,13 +134,13 @@ $(function() {
         //13是键盘上面固定的回车键
         if (ev.keyCode == 13) {
             $('.sign-submit').trigger('click');
-        }
+        };
 
         if ((signPassword.value) != confirmPassword.value) {
             $('#confirmPassWarm').html('密码不正确').css("display", "block");
         } else {
             $('#confirmPassWarm').html('').css("display", "none");
-        }
+        };
     });
 
 
