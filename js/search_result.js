@@ -145,4 +145,30 @@ function addBooks (books,parent) {
 }
 
 
+<<<<<<< HEAD
 
+=======
+/**
+ * [展开简介]
+ * @param  {[type]} e [事件]
+ */
+function aboutBook (e,book) {
+	var booktip = 
+			'<h4>'+bookInfo.name+'</h4>'
+        + '<h5>作者简介</h5>'
+        + '<p>' + bookInfo.aboutwriter + '……</p>'
+        + '<h5>内容简介</h5>'
+        + '<p>' + bookInfo.content.substring(0, 100) + '……</p>'
+        + '<a href="' + bookInfo.douban + '">去买书</a>'
+
+    $('.simple-info').html(booktip);
+    $('.simple-info')
+    	.css({
+    		"top": e.pageY + "px",
+    		"left": e.pageX + "px",
+    		"display": "block"
+
+    	}).show("fast");
+       
+}
+>>>>>>> 667106e4933fbcea60cd09955bdd07656b0ad71b
