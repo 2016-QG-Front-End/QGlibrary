@@ -110,15 +110,13 @@ function searchSkip() {
 	$('#search').bind('keyup', function(e) {
         var ev = window.event || e;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+
 /**
  * [加载图片]
  * @param {[type]} books  [书本数据]
  * @param {[type]} parent [父容器]
  */
->>>>>>> xinyi
+
 function addBooks (books,parent) {
 	for(var i = 0; i < books.length; i++) {
 		var str = 				
@@ -165,16 +163,3 @@ function aboutBook (e) {
 }
 
 
-<<<<<<< HEAD
-        	}).show("fast");
-        
-=======
-        //13是键盘上面固定的回车键
-        if (ev.keyCode == 13) {
-            $('.button').trigger('click');
-        }
-    });
->>>>>>> e882f421753602210347734503d027ff571769ed
-}
-=======
->>>>>>> xinyi

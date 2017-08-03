@@ -16,22 +16,16 @@ var myChart = echarts.init(document.getElementById('personPieChart'));
             legend: {
                 orient: 'vertical',
                 x: 'left',
-                data: ['DOTA2','LOL','绝地大逃杀','彩虹6号','杀手6']
+                data: []
             },
             series : [
             {   
                 
-                name: '玩家数量',
+                name: '书本类型',
                 type: 'pie',
                 radius: ['50%', '70%'],
                 avoidLabelOverlap: false,
-                data: [
-                    {value: 0, name: 'DOTA2'},
-                    {value: 0, name: 'LOL'},
-                    {value: 0, name: '绝地大逃杀'},
-                    {value: 0, name: '彩虹6号'},
-                    {value: 0, name: '杀手6'}
-                ],
+                data: [],
 
                 label: {
                     normal: {
@@ -69,12 +63,15 @@ $(function() {
     
         $.ajax({
             type: "post",
-            url: 'http://192.168.1.110:10086/chart',
+            url: 'http://192.168.43.182:10086/chart',
             data: null,
             dataType: "json",
             async: false,
+            xhrFields: {
+                    withCredentials: true
+                },
             success: function(data) {
-                if (data) {
+                if (!data) {
                     $('.person-recommend').css('display', 'none');
                 } else {
                     createPie(data.ratio);
@@ -100,7 +97,7 @@ function createPie (data) {
     for (var i in data) {
         var obj = new Object();
 
-            leg.push(name);
+            leg.push(i);
             obj.name = i;
             obj.value = data[i];
 
@@ -131,15 +128,18 @@ $(function() {
     
         $.ajax({
             type: "post",
-            url: 'http://192.168.1.110:10086/recom',
+            url: 'http://192.168.43.182:10086/recom',
             data: null,
             dataType: "json",
             async: false,
+            xhrFields: {
+                    withCredentials: true
+                },
             success: function(data) {
-                if (data) {
+                if (!data) {
                     $('.person-recommend').css('display', 'none');
                 } else {
-                    createRecBook(data.books);
+                    createRecBook(data);
                 }
                 
             },
