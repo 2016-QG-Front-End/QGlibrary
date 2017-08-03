@@ -1,3 +1,6 @@
+    /**
+    * 顶部加载条动画
+    */
     $({ property: 0 }).animate({ property: 100 }, {
         duration: 3000,
         step: function() {
@@ -8,6 +11,16 @@
             }
         }
     });
+
+    /**
+    * 点击logo返回首页
+    */
+    $('#logo').click(function(){
+        window.location.href='index.html';
+    });
+
+
+
 /**
  * 搜索框的跳转
  */
