@@ -53,18 +53,18 @@
 
 	.main-info img {
 		margin-right: 5px;
-		padding-top:20px;
+		padding-top:10px;
 		height:198px;
 
 		vertical-align:top;
 	}
 
-	/*.main-info::before {
+	.main-info::before {
 		content:"";
 		display: block;
-		position: relative;
-		top:-10px;
-		left:145px;
+		position: absolute;
+		top:0;
+		right:0;
 
 		border-bottom: 35px solid #e2e2e1;
 		border-right: 35px solid #fff;
@@ -74,11 +74,11 @@
 
 	.main-info:hover::before {
 		opacity: 0;
-	}*/
-
-	.main-info:hover {
-		background-color: #ffffff;
 	}
+
+	/*.main-info:hover {
+		background-color: #ffffff;
+	}*/
 
 	.book-name {
 		margin:0;
