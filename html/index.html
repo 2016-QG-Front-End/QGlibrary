@@ -176,60 +176,9 @@
     <script src="../js/jquery_3.2.1/jquery_3.2.1.min.js"></script>
     <script src="../js/ECharts/echarts.min.js"></script>
     <script src="../js/navigation.js"></script>
-    <script src="../js/new_books_show.js"></script>
-    <script src="../js/popular_book.js"></script>
-    <!--     <script src="../js/new_books_show.js"></script>
-    <script src="../js/popular_book.js"></script> -->
-
-    <script src="../js/person_recommend.js"></script>
-    <script src="../js/progressBar.js"></script>
-    <script>
-        function getHottestBook() {
-            $.ajax({
-                type: "POST",
-                url: "http://192.168.43.182:10086/newBook",
-                dataType: "json",
-                data: null,
-                success: function(data) {
-                    if (data.length>0) {
-                        for (var i = 0; i < 1; i++) {
-                            var slidingBook = '<div class="one-screen">' +
-                                '<img src="' + data[i].pictrue + '">' +
-                                '<div class="hot-book-info">' +
-                                '<h1>' + data[i].name + '</h1>' +
-                                '<span>作者：</span><span>' + data[i].author + '</span>' +
-                                '<br>' +
-                                '<span>评分：</span>' +
-                                '<div class="hot-book-score">' + data[i].rating + '</div>' +
-                                '<span>内容简介：</span>' +
-                                '<div class="hot-book-intro">' + data[i].content + '</div>' +
-                                '<a href="' + data[i].douban + '" target="_blank">详情</a>' +
-                                '</div>' +
-                                '</div>';
-                            if (i == 0) {
-                                var copyFirstBook = slidingBook;
-                            }
-                        }
-                            $('.slide-container').append(slidingBook);
-                            $('.slide-container').append(copyFirstBook);
-
-                    }
-                },
-                error: function(jqXHR) {
-                    alert("发生错误：" + jqXHR.status);
-                },
-            });
-            setInterval(function() {
-                if (parseInt($('.slide-container').css('marginLeft')) == -2700) {
-                    $('.slide-container').css('marginLeft', '225px');
-                }
-                $('.slide-container').animate({ marginLeft: '-=975px' }, 3000);
-            }, 6000);
-        }
-    </script>
-        <!-- <script src="../js/new_books_show.js"></script> -->
+    <!-- <script src="../js/new_books_show.js"></script> -->
     <!-- <script src="../js/popular_book.js"></script> -->
-    <script src="../js/person_recommend.js"></script>
+    <!-- <script src="../js/person_recommend.js"></script> -->
     <script src="../js/progressBar.js"></script>
     <script src="../js/getHottestBooks.js"></script>
 </body>
