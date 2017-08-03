@@ -11,10 +11,13 @@ function createPopularBook(data) {
 $(function() {
     $.ajax({
         type: "post",
-        url: 'http://192.168.1.110:10086/newBook',
+        url: 'http://192.168.43.182:10086/newBook',
         data: null,
         dataType: "json",
         async: false,
+        xhrFields: {
+                    withCredentials: true
+                },
         success: function(data) {
             for (var i = 10; i < 18; i++) {
                 createPopularBook(data[i]);

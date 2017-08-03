@@ -142,5 +142,4 @@ function searchSkip() {
         if (ev.keyCode == 13) {
             $('.button').trigger('click');
         }
-    });
-}
+    });}

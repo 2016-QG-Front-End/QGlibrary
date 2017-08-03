@@ -11,7 +11,7 @@ function createNewBook(data) {
 $(function() {
     $.ajax({
         type: "post",
-        url: 'http://192.168.1.110:10086/newBook',
+        url: 'http://192.168.43.182:10086/newBook',
         data: null,
         dataType: "json",
         async: false,
@@ -21,6 +21,9 @@ $(function() {
             }
             
         },
+        xhrFields: {
+                    withCredentials: true
+                },
         // error: function(xhr, status, errorThrowm) {
         //     alert("错误" + status + "错误抛出：" + errorThrowm);
         // }
