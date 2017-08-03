@@ -30,6 +30,7 @@
     display: inline-block;
 
     margin-top: 12px;
+    padding-right: 10px;
 }
 
 .popular-books-table li a {
@@ -48,6 +49,9 @@
 }
 .popular-books-table li div p:nth-child(2) {
     color: #e09015;
+}
+.popular-books-table li div p:nth-child(5) {
+    margin-top: 21px;
 }
 .popular-books-table li div {
     width: 290px;
