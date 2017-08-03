@@ -3,25 +3,25 @@
 <head>
     <meta charset="utf-8">
     <title>登录注册</title>
-    
+
     <!-- 360 使用Google Chrome Frame -->
     <meta name="renderer" content="webkit">
-    
+
     <!-- 优先使用 IE 最新版本和 Chrome -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    
+
     <!-- 开启响应式 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- SEO页面关键词 -->
     <meta name="keywords" content="your keywords">
     
     <!-- SEO页面描述 -->
     <meta name="description" content="your description">
-    
+
     <!-- favicon，可更改图片类型 -->
     <link rel="shortcut icon" href="/favicon.ico" />
-    
+
     <!-- 重设css -->
     <link  rel="stylesheet" href="../css/normalize.css">
 
@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="../css/log_in.css">
 </head>
 <body>
-    
+
     <div class="container">
         <div id="homePage">
             <a class="logo" href=""></a>
@@ -43,7 +43,7 @@
                 <div class="forget-password">
                     <a href="#">忘记密码</a>
                 </div>
-                <button class="log-submit">登录</button>
+                <button class="log-submit" id="logSubmit">登录</button>
             </div>
             <!-- 第三方登录接口 -->
             <div class="third-party-web">
@@ -65,17 +65,17 @@
         <p class="warm-sign-in" style="display: block;">还没有账号？<a class="change-sign-in">马上注册</a></p>
         <!-- end登录信息 -->
         <!-- 注册信息 -->
-        
+
             <div class="sign-in-form-data" style="display: none;">
                 <div class="input-data">
                     <p class="sign-in-error has-user" id="hasWarm" style="display: none;"></p>
                     <p class="sign-in-error user-warm" id="userWarm" style="display: none;"></p>
                     <input id="signInUsername" type="text" name="username" placeholder="注册的用户名">
                     <p class="sign-in-error pass-warm" id="passWarm" style="display: none;"></p>
-                    <input id="sign-in-password" type="password" name="password" placeholder="密码">
+                    <input id="signInPassword" type="password" name="password" placeholder="密码">
                     <p class="sign-in-error confirm-pass-warm" id="confirmPassWarm" style="display: none;"></p>
                     <input id="signInConfirmPassword" type="password" name="confirm-password" placeholder="确认密码">
-                    <button class="sign-submit">登录注册</button>
+                    <button class="sign-submit" id="signSubmit">登录注册</button>
                 </div>
                 <!-- 第三方登录接口 -->
                 <div class="third-party-web">

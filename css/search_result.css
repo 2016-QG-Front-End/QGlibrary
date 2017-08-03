@@ -6,12 +6,8 @@
 /**搜索结果**/
     .container {
         margin:120px auto;
-
         width: 1200px;
-
         background: white;
-        /*box-shadow: 0 6px 15px rgba(36, 37, 38, .08);*/
-        /*transition: box-shadow .25s ease, transform .25s ease;*/
     }
 
     .status {

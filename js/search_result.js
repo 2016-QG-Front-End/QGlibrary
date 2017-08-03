@@ -135,7 +135,22 @@ function result() {
 	});
 
 }
+/**
+ * 搜索框的跳转
+ */
+$(document).ready(function() {
+	searchSkip();
 
+})
+function searchSkip() {
+	$('.button').bind('click', function() {
+
+		location.href = location.hostname + '?' + encodeURIComponent('search_text=' + document.getElementById('search').value);
+	});
+	$('#search').bind('keyup', function(e) {
+        var ev = window.event || e;
+
+<<<<<<< HEAD
 function addBooks (books,parent) {
 	for(var i = 0; i < books.length; i++) {
 		var str = 				
@@ -174,4 +189,11 @@ function aboutBook (e) {
 
         	}).show("fast");
         
+=======
+        //13是键盘上面固定的回车键
+        if (ev.keyCode == 13) {
+            $('.button').trigger('click');
+        }
+    });
+>>>>>>> e882f421753602210347734503d027ff571769ed
 }
