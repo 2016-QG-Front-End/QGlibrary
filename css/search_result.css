@@ -49,6 +49,7 @@
 
 	.main-info img {
 		margin-right: 5px;
+		padding-top:10px;
 		height:198px;
 
 		vertical-align:top;
@@ -57,9 +58,9 @@
 	.main-info::before {
 		content:"";
 		display: block;
-		position: relative;
-		top:-10px;
-		left:145px;
+		position: absolute;
+		top:0;
+		right:0;
 
 		border-bottom: 35px solid #e2e2e1;
 		border-right: 35px solid #fff;
@@ -71,20 +72,9 @@
 		opacity: 0;
 	}
 
-
-	
-	.triangle {
-		position: relative;
-		top:-10px;
-		left:145px;
-
-		border-bottom: 35px solid #e2e2e1;
-		border-right: 35px solid #fff;
-		width: 0;
-		height: 0;
-
-		cursor: pointer;
-	}
+	/*.main-info:hover {
+		background-color: #ffffff;
+	}*/
 
 	.book-name {
 		margin:0;
@@ -131,6 +121,8 @@
 	color:#676666;
 
 	background-color:#fffdf7;
+
+	z-index: 102;
 
 }
 
