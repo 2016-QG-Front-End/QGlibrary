@@ -55,6 +55,15 @@
 		vertical-align:top;
 	}
 
+	.triangle {
+		position: absolute;
+		top:0;
+		right:0;
+
+		border-bottom: 35px solid #e2e2e1;
+		border-right: 35px solid #fff;
+	}
+
 	.main-info::before {
 		content:"";
 		display: block;
