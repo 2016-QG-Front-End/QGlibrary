@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../css/person_recommend.css">
 </head>
 
-<body>
+<body onload="getHottestBook()">
     <div id="progress"><span></span></div>
     <div class="navigation">
         <div class="inner-navigation">
@@ -193,59 +193,58 @@
     <script src="../js/person_recommend.js"></script>
     <script src="../js/progressBar.js"></script>
     <script>
-    $(function() {
         function getHottestBook() {
-            var data = {
-                books: [{
-                    "name": "这个世界不欠你",
-                    "author": "author1",
-                    "rating": 9,
-                    "pictrue": "https://img3.doubanio.com/lpic/s29497411.jpg",
-                    "bookInfo": "你怎么看待这个世界，这个世界就怎么回报你——这是每个人都应该读后反省的书",
-                    "url": "https://book.douban.com/subject/27091466/?icn=index-editionrecommend",
-                }, {
-                    "name": "这个世界不欠你",
-                    "author": "author1",
-                    "rating": 9,
-                    "pictrue": "https://img3.doubanio.com/lpic/s29497411.jpg",
-                    "url": "https://book.douban.com/subject/27091466/?icn=index-editionrecommend",
-                    "bookInfo": "你怎么看待这个世界，这个世界就怎么回报你——这是每个人都应该读后反省的书"
-                }, {
-                    "name": "这个世界不欠你",
-                    "author": "author1",
-                    "rating": 9,
-                    "pictrue": "https://img3.doubanio.com/lpic/s29497411.jpg",
-                    "url": "https://book.douban.com/subject/27091466/?icn=index-editionrecommend",
-                    "bookInfo": "你怎么看待这个世界，这个世界就怎么回报你——这是每个人都应该读后反省的书"
-                }]
-            };
+            // var data = {
+            //     books: [{
+            //         "name": "这个世界不欠你",
+            //         "author": "author1",
+            //         "rating": 9,
+            //         "pictrue": "https://img3.doubanio.com/lpic/s29497411.jpg",
+            //         "bookInfo": "你怎么看待这个世界，这个世界就怎么回报你——这是每个人都应该读后反省的书",
+            //         "url": "https://book.douban.com/subject/27091466/?icn=index-editionrecommend",
+            //     }, {
+            //         "name": "这个世界不欠你",
+            //         "author": "author1",
+            //         "rating": 9,
+            //         "pictrue": "https://img3.doubanio.com/lpic/s29497411.jpg",
+            //         "url": "https://book.douban.com/subject/27091466/?icn=index-editionrecommend",
+            //         "bookInfo": "你怎么看待这个世界，这个世界就怎么回报你——这是每个人都应该读后反省的书"
+            //     }, {
+            //         "name": "这个世界不欠你",
+            //         "author": "author1",
+            //         "rating": 9,
+            //         "pictrue": "https://img3.doubanio.com/lpic/s29497411.jpg",
+            //         "url": "https://book.douban.com/subject/27091466/?icn=index-editionrecommend",
+            //         "bookInfo": "你怎么看待这个世界，这个世界就怎么回报你——这是每个人都应该读后反省的书"
+            //     }]
+            // };
             $.ajax({
                 type: "POST",
-                url: "http://localhost:8080/IxkimNote/ReadPopularNote",
+                url: "http://192.168.1.110:10086/newBook",
                 dataType: "json",
                 data: null,
                 success: function(data) {
-                    if (data) {
-                        for (var i = 0; i < data.books.length; i++) {
+                    if (data.length>0) {
+                        for (var i = 0; i < 3; i++) {
                             var slidingBook = '<div class="one-screen">' +
-                                '<img src="' + data.books[i].pictrue + '">' +
+                                '<img src="' + data[i].pictrue + '">' +
                                 '<div class="hot-book-info">' +
-                                '<h1>' + data.books[i].name + '</h1>' +
-                                '<span>作者：</span><span>' + data.books[i].author + '</span>' +
+                                '<h1>' + data[i].name + '</h1>' +
+                                '<span>作者：</span><span>' + data[i].author + '</span>' +
                                 '<br>' +
                                 '<span>评分：</span>' +
-                                '<div class="hot-book-score">' + data.books[i].rating + '</div>' +
+                                '<div class="hot-book-score">' + data[i].rating + '</div>' +
                                 '<span>内容简介：</span>' +
-                                '<div class="hot-book-intro">' + data.books[i].bookInfo + '</div>' +
-                                '<a href="' + data.books[i].url + '" target="_blank">详情</a>' +
+                                '<div class="hot-book-intro">' + data[i].content + '</div>' +
+                                '<a href="' + data[i].url + '" target="_blank">详情</a>' +
                                 '</div>' +
                                 '</div>';
                             if (i == 0) {
                                 var copyFirstBook = slidingBook;
                             }
+                        }
                             $('.slide-container').append(slidingBook);
                             $('.slide-container').append(copyFirstBook);
-                        }
 
                     }
                 },
@@ -260,8 +259,6 @@
                 $('.slide-container').animate({ marginLeft: '-=975px' }, 3000);
             }, 6000);
         }
-
-    });
     </script>
 </body>
 
