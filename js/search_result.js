@@ -143,5 +143,3 @@ function aboutBook (e,book) {
     	}).show("fast");
        
 }
-
-
