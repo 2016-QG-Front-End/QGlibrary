@@ -1,18 +1,15 @@
 $(document).ready(function() {
 	result();
-	scrollBottom();
-	open();
 	booktip();
+	scrollBottom();
 	esc();
-
-
-
 })
+
 /**
  * [弹出简介]
  */
 function booktip() {
-	$('.main-info').click(function(e) {
+	$('ul li').click(function(e) {
 		e.stopPropagation();
 			rq = {
 				isbn: $(this)[0].children[5].innerHTML
@@ -20,14 +17,13 @@ function booktip() {
 
 			$.ajax({
 				type:"POST",
-				url:"",
+				url:":192.168.1.110:10086/bookEx",
 				contentType:"application/json; charset=utf-8",
 				data: JSON.stringify(rq),
 				dataType: "json",
 				async: false,
 				success: function(data) {
-					var data.book= bookInfo;
-					addBooks();
+					aboutBook(e, data.book);
 				}
 			});
 
@@ -58,7 +54,7 @@ function scrollBottom() {
 
 		if(scrollTop/(contentH - viewH) >= 0.9) {
 			result();
-
+			booktip();
 		}
 
 	})
@@ -78,15 +74,14 @@ function result() {
 
 	$.ajax({
 		type:"POST",
-		url:"",
+		url:":192.168.1.110:10086/search",
 		contentType:"application/json; charset=utf-8",
 		data: JSON.stringify(rq),
 		dataType: "json",
 		async: false,
 		success: function(data) {
 			if(data.status) {			
-				var books = data.bookInfo;
-			 	addBooks(books, $('.in-container'));
+			 	addBooks(data.books, $('.in-container'));
 			} else {
 				$('div').css({"margin":"0 auto","width":"1000px","color":"grey","text-align":"center","font-size":"13px"})
 						.text("共找到" + $('.index').text() + "条结果")
@@ -95,30 +90,15 @@ function result() {
 	});
 
 }
-/**
- * 搜索框的跳转
- */
-$(document).ready(function() {
-	searchSkip();
 
-})
-function searchSkip() {
-	$('.button').bind('click', function() {
 
-		location.href = location.hostname + '?' + encodeURIComponent('search_text=' + document.getElementById('search').value);
-	});
-	$('#search').bind('keyup', function(e) {
-        var ev = window.event || e;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 /**
  * [加载图片]
  * @param {[type]} books  [书本数据]
  * @param {[type]} parent [父容器]
  */
->>>>>>> xinyi
+
 function addBooks (books,parent) {
 	for(var i = 0; i < books.length; i++) {
 		var str = 				
@@ -144,7 +124,7 @@ function addBooks (books,parent) {
  * [展开简介]
  * @param  {[type]} e [事件]
  */
-function aboutBook (e) {
+function aboutBook (e,book) {
 	var booktip = 
 			'<h4>'+bookInfo.name+'</h4>'
         + '<h5>作者简介</h5>'
@@ -165,16 +145,4 @@ function aboutBook (e) {
 }
 
 
-<<<<<<< HEAD
-        	}).show("fast");
-        
-=======
-        //13是键盘上面固定的回车键
-        if (ev.keyCode == 13) {
-            $('.button').trigger('click');
-        }
-    });
->>>>>>> e882f421753602210347734503d027ff571769ed
-}
-=======
->>>>>>> xinyi
+
