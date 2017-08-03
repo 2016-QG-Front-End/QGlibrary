@@ -169,7 +169,7 @@ $(function() {
         if ((regUser.test(username.value)) && (regPass.test(password.value))) {
             $.ajax({
                 type: "post",
-                url: 'http://192.168.1.110:10086/login',
+                url: 'http://192.168.43.182:10086/login',
                 data: JSON.stringify(obj),
                 dataType: "json",
                 async: false,
@@ -229,7 +229,7 @@ $(function() {
 
             $.ajax({
                 type: "post",
-                url: 'http://192.168.1.110:10086/hasUser',
+                url: 'http://192.168.43.182:10086/hasUser',
                 data: JSON.stringify(obj),
                 dataType: "json",
                 async: true,
@@ -292,7 +292,7 @@ $(function() {
 
             $.ajax({
                 type: "post",
-                url: 'http://192.168.1.110:10086/signUp',
+                url: 'http://192.168.43.182:10086/signUp',
                 data: JSON.stringify(obj),
                 dataType: "json",
                 async: true,
@@ -300,6 +300,9 @@ $(function() {
                     if (data.status) {
                         location.href = data.url;
                     }
+                },
+                xhrFields: {
+                    withCredentials: true
                 },
                 error: function(xhr, status, errorThrowm) {
                     alert("错误" + status + "错误抛出：" + errorThrowm);
@@ -325,7 +328,7 @@ $(function() {
 
     $.ajax({
         type: "post",
-        url: 'http://192.168.1.110:10086/ranGra',
+        url: 'http://192.168.43.182:10086/ranGra',
         data: null,
         dataType: "json",
         async: true,

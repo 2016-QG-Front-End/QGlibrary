@@ -4,26 +4,29 @@
  * @param {[obj]} data [新书的obj对象，含有新书的信息]
  */
 function createNewBook(data) {
-    var oLi = '<li><img src="' + data.picture + '"><div class="book-name"><a href="'+ data.url + '">' + data.name +'</a></div>' + '<div  class="writer">' + data.author + '</div>' + '</li>'
+    var oLi = '<li class="new-book-show-cell"><img src="' + data.picture + '"><div class="book-name"><a href="'+ data.url + '">' + data.name +'</a></div>' + '<div  class="writer">' + data.author + '</div>' + '</li>'
     $('.new-books').append(oLi);
 }
 
 $(function() {
     $.ajax({
         type: "post",
-        url: 'http://192.168.1.110:10086/newBook',
+        url: 'http://192.168.43.182:10086/newBook',
         data: null,
         dataType: "json",
         async: false,
         success: function(data) {
             for (var i = 0; i < 10; i++) {
-                createNewBook(data.book[i]);
+                createNewBook(data[i]);
             }
             
         },
-        error: function(xhr, status, errorThrowm) {
-            alert("错误" + status + "错误抛出：" + errorThrowm);
-        }
+        xhrFields: {
+                    withCredentials: true
+                },
+        // error: function(xhr, status, errorThrowm) {
+        //     alert("错误" + status + "错误抛出：" + errorThrowm);
+        // }
     })
 })
 /**

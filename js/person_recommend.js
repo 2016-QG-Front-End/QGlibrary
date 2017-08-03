@@ -16,22 +16,16 @@ var myChart = echarts.init(document.getElementById('personPieChart'));
             legend: {
                 orient: 'vertical',
                 x: 'left',
-                data: ['DOTA2','LOL','绝地大逃杀','彩虹6号','杀手6']
+                data: []
             },
             series : [
             {   
                 
-                name: '玩家数量',
+                name: '书本类型',
                 type: 'pie',
                 radius: ['50%', '70%'],
                 avoidLabelOverlap: false,
-                data: [
-                    {value: 0, name: 'DOTA2'},
-                    {value: 0, name: 'LOL'},
-                    {value: 0, name: '绝地大逃杀'},
-                    {value: 0, name: '彩虹6号'},
-                    {value: 0, name: '杀手6'}
-                ],
+                data: [],
 
                 label: {
                     normal: {
@@ -66,21 +60,29 @@ $(function() {
     var obj = new Object();
 
     obj.user = $('#userName').text();
-    if (document.getElementById('userInfo').style.display == 'block') {
+    
         $.ajax({
             type: "post",
-            url: 'http://192.168.1.110:10086/newBook',
-            data: JSON.stringify(obj),
+            url: 'http://192.168.43.182:10086/chart',
+            data: null,
             dataType: "json",
             async: false,
+            xhrFields: {
+                    withCredentials: true
+                },
             success: function(data) {
-                createPie(data.ratio)
+                if (!data) {
+                    $('.person-recommend').css('display', 'none');
+                } else {
+                    createPie(data.ratio);
+                }
+                
             },
-            error: function(xhr, status, errorThrowm) {
-                alert("错误" + status + "错误抛出：" + errorThrowm);
-            }
+            // error: function(xhr, status, errorThrowm) {
+            //     alert("错误" + status + "错误抛出：" + errorThrowm);
+            // }
         });
-    }
+    
     
 })
 
@@ -95,7 +97,7 @@ function createPie (data) {
     for (var i in data) {
         var obj = new Object();
 
-            leg.push(name);
+            leg.push(i);
             obj.name = i;
             obj.value = data[i];
 
@@ -123,21 +125,29 @@ $(function() {
     var obj = new Object();
 
     obj.user = $('#userName').text();
-    if (document.getElementById('userInfo').style.display == 'block') {
+    
         $.ajax({
             type: "post",
-            url: 'http://192.168.1.110:10086/newBook',
-            data: JSON.stringify(obj),
+            url: 'http://192.168.43.182:10086/recom',
+            data: null,
             dataType: "json",
             async: false,
+            xhrFields: {
+                    withCredentials: true
+                },
             success: function(data) {
-                createRecBook(data.books)
+                if (!data) {
+                    $('.person-recommend').css('display', 'none');
+                } else {
+                    createRecBook(data);
+                }
+                
             },
-            error: function(xhr, status, errorThrowm) {
-                alert("错误" + status + "错误抛出：" + errorThrowm);
-            }
+            // error: function(xhr, status, errorThrowm) {
+            //     alert("错误" + status + "错误抛出：" + errorThrowm);
+            // }
         });
-    }
+    
 })
 /**
  * [createRecBook 创建个人推荐书单]
@@ -146,7 +156,7 @@ $(function() {
  */
 function createRecBook(arr) {
     for (var i in arr) {
-         var oLi = '<li><a href=""><img src="' + arr[i].pictrue + '"></a><div><h4>' + arr[i].name + '</h4><p class="evaluate">评分：<i>' + arr[i].rating + '</i></p><p class="book-writer">' + arr[i].author + '</p><p class="category ">' + arr[i].类别 + '</p><p class="cntent-abstract">' + arr[i].内容简介 + '</p></div></li>';
+         var oLi = '<li><a href=""><img src="' + arr[i].pictrue + '"></a><div><h4>' + arr[i].name + '</h4><p class="evaluate">评分：<i>' + arr[i].rating + '</i></p><p class="book-writer">' + arr[i].author + '</p><p class="category ">' + arr[i].type + '</p><p class="cntent-abstract">' + arr[i].content + '</p></div></li>';
 
          $('.person-recommend-book').append(oLi);
     }
