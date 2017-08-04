@@ -1,15 +1,4 @@
- body {
-        margin: 0;
-    }
-
-
 /**搜索结果**/
-    .container {
-        margin:120px auto;
-        width: 1200px;
-        background: white;
-    }
-
     .status {
 
     	font-size: 13px;
@@ -41,6 +30,7 @@
 		margin:10px;
 		padding-top:10px;
 		width:180px;
+		height:342px;
 
 		background-color: #f3f3f3;
 		text-align: center;
@@ -53,6 +43,7 @@
 		margin-right: 5px;
 		padding-top:10px;
 		height:198px;
+		max-width: 162px;
 
 		vertical-align:top;
 	}
@@ -88,7 +79,9 @@
 	}*/
 
 	.book-name {
-		margin:0;
+		margin-top:10px;
+		margin-bottom: 0;
+		height:42px;
 
 		font-size: 18px;
 		font-weight: bold;
@@ -96,6 +89,9 @@
 	}
 	
 	.book-writer {
+		margin:0;
+		height: 26px;
+		
 		font-size: 12px;
 	}
 
@@ -120,48 +116,58 @@
     }
 /**end 搜索结果**/
 
+/**搜索结果数**/
+	.result {
+		margin:0 auto;
+		width:1000px;
+		color:grey;
+		text-align:center;
+		font-size:13px;
+	}
+/**end 搜索结果数**/
+
 /** 弹出的简介 **/
-.simple-info {
-	position: absolute;
-	display: none;
+	.simple-info {
+		position: absolute;
+		display: none;
 
-	border:1px solid #d6cec3;
-	padding:10px 20px;
-	width:400px;
+		border:1px solid #d6cec3;
+		padding:10px 20px;
+		width:400px;
 
-	color:#676666;
+		color:#676666;
 
-	background-color:#fffdf7;
+		background-color:#fffdf7;
 
-	z-index: 102;
+		z-index: 102;
 
-}
+	}
 
-.simple-info p {	
-	margin:10px 0;
+	.simple-info p {	
+		margin:10px 0;
 
-	font-size:13px;
-	text-align: left;
-	
-}
+		font-size:13px;
+		text-align: left;
+		
+	}
 
-.simple-info a {
-	display: inline-block;
+	.simple-info a {
+		display: inline-block;
 
-	border-radius: 5px;
-	margin:25px 0;
-	padding:5px;
-	
-	text-decoration: none;
-}
+		border-radius: 5px;
+		margin:25px 0;
+		padding:5px;
+		
+		text-decoration: none;
+	}
 
-.simple-info a:visited, .simple-info a:link {
-	color:grey;
-	border: 0.2px solid grey;
-}
+	.simple-info a:visited, .simple-info a:link {
+		color:grey;
+		border: 0.2px solid grey;
+	}
 
-.simple-info a:hover, .simple-info a:active {
-	color:#bbb7b7;
-	border: 0.2px solid #bbb7b7;
-}
+	.simple-info a:hover, .simple-info a:active {
+		color:#bbb7b7;
+		border: 0.2px solid #bbb7b7;
+	}
 /** end弹出的简介 **/

@@ -1,6 +1,5 @@
 $(document).ready(function() {
 	result();
-	booktip();
 	scrollBottom();
 	esc();
 })
@@ -12,18 +11,43 @@ function booktip() {
 	$('ul li').click(function(e) {
 		e.stopPropagation();
 			rq = {
-				isbn: $(this)[0].children[5].innerHTML
+				ISBN: $(this)[0].children[4].innerHTML
 			}
-
 			$.ajax({
 				type:"POST",
-				url:":192.168.1.110:10086/bookEx",
+				url:"http://192.168.199.79:10086/bookEx",
 				contentType:"application/json; charset=utf-8",
 				data: JSON.stringify(rq),
 				dataType: "json",
-				async: false,
 				success: function(data) {
-					aboutBook(e, data.book);
+					if(data.aboutwriter.length > 150) {
+						 data.aboutwriter = data.aboutwriter.substring(0, 150) + '……';
+					} else if(data.aboutwriter.length == 0) {
+						 data.aboutwriter = '暂无资料';
+					}
+
+					if(data.content.length > 180) {
+						 data.content = data.content.substring(0, 180) + '……';
+					} else if(data.content.length == 0) {
+						 data.content = '暂无资料';
+					}
+
+					var booktip = 
+							'<h4>'+data.name+'</h4>'
+				        + '<h5>作者简介</h5>'
+				        + '<p>' + data.aboutwriter + '</p>'
+				        + '<h5>内容简介</h5>'
+				        + '<p>' + data.content + '</p>'
+				        + '<a href="' + data.douban + '">去买书</a>'
+
+				    $('.simple-info').html(booktip);
+				    $('.simple-info')
+				    	.css({
+				    		"top": e.pageY + "px",
+				    		"left": e.pageX + "px",
+				    		"display": "block"
+
+				    	}).show("fast");
 				}
 			});
 
@@ -54,11 +78,11 @@ function scrollBottom() {
 
 		if(scrollTop/(contentH - viewH) >= 0.9) {
 			result();
-			booktip();
 		}
 
 	})
 }
+
 
 /**
  * [请求搜索结果加载图片]
@@ -74,24 +98,22 @@ function result() {
 
 	$.ajax({
 		type:"POST",
-		url:":192.168.1.110:10086/search",
+		url:"http://192.168.199.79:10086/search",
 		contentType:"application/json; charset=utf-8",
 		data: JSON.stringify(rq),
 		dataType: "json",
-		async: false,
 		success: function(data) {
-			if(data.status) {			
-			 	addBooks(data.books, $('.in-container'));
+			if(data.status == "false") {			
+					$('.result')
+					.text("共找到" + $('.index').text() + "条结果");
 			} else {
-				$('div').css({"margin":"0 auto","width":"1000px","color":"grey","text-align":"center","font-size":"13px"})
-						.text("共找到" + $('.index').text() + "条结果")
+			 	addBooks(data.books, $('.in-container'));
+			 	booktip();
 			}			
 		}
 	});
 
 }
-
-
 
 /**
  * [加载图片]
@@ -101,15 +123,18 @@ function result() {
 
 function addBooks (books,parent) {
 	for(var i = 0; i < books.length; i++) {
+		if( !(/\.(jpe?g|png|gif)$/i.test(books[i].picture))) {
+			books[i].picture = "../images/default.gif";
+		}
 		var str = 				
 			'<li class="main-info">'
-		+	'<img src="'+books[i].pictrue+'">'
-        +   '<p class="book-name">'+ books[i].name  +'</p>'
+		+	'<img src="'+books[i].picture+'">'
+        +   '<p class="book-name">'+ books[i].name +'</p>'
         +   '<p class="book-writer">作者:'+ books[i].author +'</p>'
         +   '<div class="evaluate">'
         +       '<div class="on" style="width:'+(parseInt(books[i].rating)/10)*5*16+'px"></div>'
         +   '</div>'
-        +	'<p class="isbn">' + books[i].isbn + '</p>' 
+        +	'<p class="isbn">' + books[i].ISBN + '</p>' 
         +   '</li>'         
 
     	$(str).appendTo(parent);
@@ -118,30 +143,3 @@ function addBooks (books,parent) {
 	} 
     $('.index').text(parseInt($('.index').text()) + books.length);		
 }
-
-
-/**
- * [展开简介]
- * @param  {[type]} e [事件]
- */
-function aboutBook (e,book) {
-	var booktip = 
-			'<h4>'+bookInfo.name+'</h4>'
-        + '<h5>作者简介</h5>'
-        + '<p>' + bookInfo.aboutwriter + '……</p>'
-        + '<h5>内容简介</h5>'
-        + '<p>' + bookInfo.content.substring(0, 100) + '……</p>'
-        + '<a href="' + bookInfo.douban + '">去买书</a>'
-
-    $('.simple-info').html(booktip);
-    $('.simple-info')
-    	.css({
-    		"top": e.pageY + "px",
-    		"left": e.pageX + "px",
-    		"display": "block"
-
-    	}).show("fast");
-       
-}
-
-

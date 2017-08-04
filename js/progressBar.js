@@ -19,26 +19,49 @@
         window.location.href='index.html';
     });
 
+    /**
+    * 注销
+    */
+    function logout() {
+                $.ajax({
+                type: "POST",
+                url: "http://192.168.199.79:10086/logout",
+                dataType: "json",
+                data: null,
+                success: function(data) {
+                    console.log(data);
+                },
+                error: function(jqXHR) {
+                    alert("发生错误：" + jqXHR.status);
+                },
+            });
+    }
 
 
-/**
- * 搜索框的跳转
- */
-$(document).ready(function() {
-    searchSkip();
+    /**
+    * 获取用户名和头像
+    */
+    var randomPic=parseInt(Math.random()*30);
+    $('#userHead').attr('src','../images/headPic/'+randomPic+'.jpg');
 
-})
-function searchSkip() {
-    $('.button').bind('click', function() {
+    /**
+     * 搜索框的跳转
+     */
+    $(document).ready(function() {
+        searchSkip();
 
-        location.href = location.hostname + '?' + 'search_text=' + encodeURIComponent(document.getElementById('search').value);
     });
-    $('#search').bind('keyup', function(e) {
-        var ev = window.event || e;
+    function searchSkip() {
+        $('.button').bind('click', function() {
 
-        //13是键盘上面固定的回车键
-        if (ev.keyCode == 13) {
-            $('.button').trigger('click');
-        }
+            location.href = location.hostname + '?' + 'search_text=' + encodeURIComponent(document.getElementById('search').value);
+        });
+        $('#search').bind('keyup', function(e) {
+            var ev = window.event || e;
+
+            //13是键盘上面固定的回车键
+            if (ev.keyCode == 13) {
+                $('.button').trigger('click');
+            }
     });
-}
+    }

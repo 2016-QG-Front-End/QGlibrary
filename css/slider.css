@@ -1,13 +1,3 @@
-/**主容器开始**/
-    .container {
-        margin:65px auto 0;
-        width: 1200px;
-        height: 1600px;
-        background: white;
-        /*box-shadow: 0 6px 15px rgba(36, 37, 38, .08);*/
-        /*transition: box-shadow .25s ease, transform .25s ease;*/
-    }
-/**主容器结束**/
 
 /**图书轮播开始**/
     .slider {
@@ -69,6 +59,5 @@
         overflow: hidden;
         height: 109px;
         width: 100%;
-        border:dashed white 1px;
     }
 /**图书轮播结束**/
