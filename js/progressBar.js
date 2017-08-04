@@ -54,7 +54,7 @@
     function searchSkip() {
         $('.button').bind('click', function() {
 
-            location.href = location.hostname + '?' + 'search_text=' + encodeURIComponent(document.getElementById('search').value);
+            location.href = 'search_result.html' + '?' + 'search_text=' + encodeURIComponent(document.getElementById('search').value);
         });
         $('#search').bind('keyup', function(e) {
             var ev = window.event || e;
