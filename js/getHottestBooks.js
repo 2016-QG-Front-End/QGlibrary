@@ -9,7 +9,7 @@
                         // alert(data.length);
                         for (var i = 0; i < 3; i++) {
                             var slidingBook = '<div class="one-screen">' +
-                                '<img src="' + data[i].pictrue + '">' +
+                                '<img src="' + data[i].picture + '">' +
                                 '<div class="hot-book-info">' +
                                 '<h1>' + data[i].name + '</h1>' +
                                 '<span>作者：</span><span>' + data[i].author + '</span>' +
