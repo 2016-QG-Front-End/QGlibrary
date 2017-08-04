@@ -50,11 +50,11 @@
     $(document).ready(function() {
         searchSkip();
 
-    })
+    });
     function searchSkip() {
         $('.button').bind('click', function() {
 
-            location.href = location.hostname + '?' + encodeURIComponent('search_text=' + document.getElementById('search').value);
+            location.href = location.hostname + '?' + 'search_text=' + encodeURIComponent(document.getElementById('search').value);
         });
         $('#search').bind('keyup', function(e) {
             var ev = window.event || e;
@@ -63,5 +63,5 @@
             if (ev.keyCode == 13) {
                 $('.button').trigger('click');
             }
-        });
+    });
     }
