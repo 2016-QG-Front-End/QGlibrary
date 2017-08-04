@@ -145,9 +145,6 @@ function addBooks (books,parent) {
 }
 
 
-<<<<<<< HEAD
-
-=======
 /**
  * [展开简介]
  * @param  {[type]} e [事件]
@@ -171,4 +168,4 @@ function aboutBook (e,book) {
     	}).show("fast");
        
 }
->>>>>>> 667106e4933fbcea60cd09955bdd07656b0ad71b
+
