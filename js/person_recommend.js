@@ -63,7 +63,7 @@ $(function() {
     
         $.ajax({
             type: "post",
-            url: 'http://192.168.43.182:10086/chart',
+            url: 'http://192.168.199.79:10086/chart',
             data: null,
             dataType: "json",
             async: false,
@@ -128,7 +128,7 @@ $(function() {
     
         $.ajax({
             type: "post",
-            url: 'http://192.168.43.182:10086/recom',
+            url: 'http://192.168.199.79:10086/recom',
             data: null,
             dataType: "json",
             async: false,
@@ -156,10 +156,20 @@ $(function() {
  */
 function createRecBook(arr) {
     for (var i in arr) {
-         var oLi = '<li><a href=""><img src="' + arr[i].pictrue + '"></a><div><h4>' + arr[i].name + '</h4><p class="evaluate">评分：<i>' + arr[i].rating + '</i></p><p class="book-writer">' + arr[i].author + '</p><p class="category ">' + arr[i].type + '</p><p class="cntent-abstract">' + arr[i].content + '</p></div></li>';
+         var oLi = '<li><a href="' + arr[i].douban + '"><img src="' + arr[i].picture + '"></a><div><h4>' + arr[i].name + '</h4><p class="evaluate">评分：<i>' + arr[i].rating + '</i></p><p class="book-writer">' + arr[i].author + '</p><p class="category ">' + arr[i].type + '</p></div></li>';
 
          $('.person-recommend-book').append(oLi);
-    }
+    };
+
+    for (var i in arr) {
+        var personRecommendBook = document.getElementsByClassName('person-recommend-book')[0];
+        var Li = personRecommendBook.getElementsByTagName('li');
+        var h4 = Li[i].getElementsByTagName('h4')[0];
+            h4.onclick = function() {
+                location.href = arr[i].douban;
+            }
+        
+    };
 }
 /**
  * end 个人信息推荐书籍

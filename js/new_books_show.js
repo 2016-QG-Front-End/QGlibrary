@@ -4,14 +4,14 @@
  * @param {[obj]} data [新书的obj对象，含有新书的信息]
  */
 function createNewBook(data) {
-    var oLi = '<li class="new-book-show-cell"><img src="' + data.picture + '"><div class="book-name"><a href="'+ data.url + '">' + data.name +'</a></div>' + '<div  class="writer">' + data.author + '</div>' + '</li>'
+    var oLi = '<li class="new-book-show-cell"><a href="' + data.douban + '"><img src="' + data.picture + '"></a><div class="book-name"><a href="'+ data.douban + '">' + data.name +'</a></div>' + '<div  class="writer">' + data.author + '</div>' + '</li>'
     $('.new-books').append(oLi);
 }
 
 $(function() {
     $.ajax({
         type: "post",
-        url: 'http://192.168.43.182:10086/newBook',
+        url: 'http://192.168.199.79:10086/newBook',
         data: null,
         dataType: "json",
         async: false,
