@@ -41,9 +41,14 @@
 }
 .popular-books-table li div  h4,
 .popular-books-table li div p {
-    margin: 13px 0;;
+    margin: 13px 0;
 }
-
+.popular-books-table li div  h4 {
+    cursor: pointer;
+}
+.popular-books-table li div  h4:hover {
+    color: #9C27B0;
+}
 .popular-books-table li div p > i {
     font-size: 22px;
 }
