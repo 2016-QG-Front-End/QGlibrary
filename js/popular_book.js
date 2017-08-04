@@ -4,14 +4,21 @@
  * @param {[type]} data [书的信息]
  */
 function createPopularBook(data) {
-    var oLi = '<li><a href=""><img src="' + data.picture + '"></a><div><h4>' + data.name + '</h4><p class="evaluate">评分：<i>' + data.rating + '</i></p><p class="book-writer">' + data.author +'</p><p class="category ">' + data.type + ' </p><p class="cntent-abstract">' + data.content + '</p></div></li>';
+    var oLi = '<li><a href="' + data.douban + '"><img src="' + data.picture + '"></a><div><h4>' + data.name + '</h4><p class="evaluate">评分：<i>' + data.rating + '</i></p><p class="book-writer">' + data.author +'</p><p class="category ">' + data.type + ' </p><p class="cntent-abstract">' + data.content + '</p></div></li>';
     $('.popular-books-table').append(oLi);
+
+    var personRecommendBook = document.getElementsByClassName('popular-books-table')[0];
+    var Li = personRecommendBook.getElementsByTagName('li');
+    var h4 = Li[Li.length-1].getElementsByTagName('h4')[0];
+        h4.onclick = function() {
+            location.href = data.douban;
+        }
 }
 
 $(function() {
     $.ajax({
         type: "post",
-        url: 'http://192.168.43.182:10086/newBook',
+        url: 'http://192.168.199.79:10086/newBook',
         data: null,
         dataType: "json",
         async: false,
@@ -27,5 +34,5 @@ $(function() {
         // error: function(xhr, status, errorThrowm) {
         //     alert("错误" + status + "错误抛出：" + errorThrowm);
         // }
-    })
+    });
 })
