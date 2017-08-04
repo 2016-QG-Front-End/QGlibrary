@@ -17,6 +17,9 @@ function booktip() {
 				type:"POST",
 				url:"http://192.168.199.79:10086/bookEx",
 				contentType:"application/json; charset=utf-8",
+				xhrFields: {
+		      		withCredentials: true
+		   		},
 				data: JSON.stringify(rq),
 				dataType: "json",
 				success: function(data) {
@@ -100,6 +103,9 @@ function result() {
 		type:"POST",
 		url:"http://192.168.199.79:10086/search",
 		contentType:"application/json; charset=utf-8",
+		xhrFields: {
+		      		withCredentials: true
+		   		},
 		data: JSON.stringify(rq),
 		dataType: "json",
 		success: function(data) {
