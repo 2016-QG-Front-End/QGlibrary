@@ -1,4 +1,10 @@
+    html{
+    height: 100%;
+    }
     body {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
         margin: 0;
     }
     /**导航区开始**/
@@ -96,13 +102,13 @@
         float: right;
 
         margin: 11px 20px;
-        border:0.1px solid #b5b3b3;
+        border: 0.1px solid #b5b3b3;
         border-radius: 3px;
         padding: 0 0 0 5px;
         width: 300px;
         height: 39px;
 
-        
+
 
         background: #f6f6f6;
     }
@@ -114,7 +120,7 @@
         box-shadow: 0 0 8px #9C27B0;
 
         -webkit-transition: box-shadow .20s linear 0s;
-                transition: box-shadow .20s linear 0s;
+        transition: box-shadow .20s linear 0s;
     }
 
     .button {
@@ -203,10 +209,23 @@
     }
     /***用户信息块结束***/
     /**导航区结束**/
+
+    /**主容器开始**/
+
+    .container {
+        flex: 1 0 auto;
+        margin: 65px auto 0;
+        width: 1200px;
+        height: auto;
+        background: white;
+    }
+    /**主容器结束**/
+
     /**网站底部开始**/
 
     .footer {
-        position: relative;
+        flex: 0 0 auto;
+        /*position: relative;*/
         height: 230px;
         background-color: #f7f7f7;
     }

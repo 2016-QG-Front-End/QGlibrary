@@ -44,12 +44,6 @@
     var randomPic=parseInt(Math.random()*30);
     $('#userHead').attr('src','../images/headPic/'+randomPic+'.jpg');
 
-
-
-    location.href = location.hostname + '?' + 'search_text=' + encodeURIComponent(document.getElementById('search').value);
-
-    $('#search').bind('keyup', function(e) {
-        var ev = window.event || e;
     /**
      * 搜索框的跳转
      */
