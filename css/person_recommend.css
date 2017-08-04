@@ -47,7 +47,12 @@
 .pperson-recommend-book li div p {
     margin: 13px 0;;
 }
-
+.person-recommend-book li div  h4 {
+    cursor: pointer;
+}
+.person-recommend-book li div  h4:hover {
+    color: #9C27B0;
+}
 .person-recommend-book li div p > i {
     font-size: 22px;
 }
