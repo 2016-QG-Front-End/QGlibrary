@@ -4,40 +4,25 @@
  * @param {[obj]} data [新书的obj对象，含有新书的信息]
  */
 function createNewBook(data) {
-    var oLi = '<li class="new-book-show-cell"><a href="' + data.douban + '"><img src="' + data.picture + '"></a><div class="book-name"><a href="'+ data.douban + '">' + data.name +'</a></div>' + '<div  class="writer">' + data.author + '</div>' + '</li>'
+     var author = data.author
+        if(author.length >= 6) {
+            author = author.substring(0,5) + '...' 
+        };
+
+    var name = data.name
+        if(name.length >= 7) {
+            name = name.substring(0,6) + '...' 
+        };
+    
+    var oLi = '<li class="new-book-show-cell"><a href="' + data.douban + '"  target="_blank"><img src="' + data.picture + '" title="' + data.name + '"></a><div class="book-name"><a href="'+ data.douban + '"  target="_blank" title="' + data.name + '" >' + name +'</a></div>' + '<div  class="writer" title="' + data.author + '">' + author + '</div>' + '</li>'
     $('.new-books').append(oLi);
 }
 
 $(function() {
-    $.ajax({
-        type: "post",
-        url: 'http://192.168.199.79:10086/newBook',
-        data: null,
-        dataType: "json",
-        async: false,
-        success: function(data) {
-            for (var i = 0; i < 10; i++) {
-                createNewBook(data[i]);
-            }
-            
-        },
-        xhrFields: {
-                    withCredentials: true
-                },
-        // error: function(xhr, status, errorThrowm) {
-        //     alert("错误" + status + "错误抛出：" + errorThrowm);
-        // }
-    })
-})
-/**
- * [页面跳转到搜索框，url传递类别]
- * 
- * 
- */
-$(function() {
     $('.book-type-label li span').bind('click', function () {
         var type = $(this).text();
-        location.href = location.href + '?' + encodeURIComponent('search_text=' + type);
+        url =  'search_result.html' + '?' + 'search_text='+ encodeURIComponent(type);
+        window.open(url);
     })
 })
 

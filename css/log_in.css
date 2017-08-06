@@ -214,11 +214,12 @@ body {
 .third-party-connect a  i {
     display: block;
 
-    margin: 0 0 4px 10px;
+    margin: 0 0 4px 8px;
     width: 42px;
     height: 42px;
 
-    background: url("../images/c_icon3.gif") no-repeat;
+    background: url("../images/c_icon4.gif") no-repeat;
+        background-size: 126px;
 
     cursor: pointer;
 }

@@ -152,7 +152,7 @@
         height: 60px;
         line-height: 60px;
         text-align: right;
-        display: none;
+        display: block;
     }
 
     .login-state a {
@@ -174,7 +174,7 @@
 
 
     #userInfo {
-        display: block;
+        display: none;
     }
 
     .login-state #userHead {
