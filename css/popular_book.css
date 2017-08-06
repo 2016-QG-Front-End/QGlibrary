@@ -9,14 +9,14 @@
     font-size: 18px;
     font-weight: bold;
 
-    color: #9C27B0;
+    color: #9c27b0;
 }
 
 .line-popular-book {
     width: 1200px;
     height: 1px;
 
-    background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+   background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 .popular-books-table {
@@ -29,12 +29,21 @@
 .popular-books-table li {
     display: inline-block;
 
-    margin-top: 12px;
+    margin: 15px 10px;
     padding-right: 10px;
-}
+    width: 270px;
+    height: 170px;
+   box-shadow: 0 1px 4px rgba(0,0,0,0.4);
 
+}
+.popular-books-table li:hover {
+    background-color: #e2e1e1;
+}
 .popular-books-table li a {
     float: left;
+
+    padding-top: 10px;
+    padding-left: 15px;
 }
 .popular-books-table li a img {
     width: 100px;
@@ -47,7 +56,7 @@
     cursor: pointer;
 }
 .popular-books-table li div  h4:hover {
-    color: #9C27B0;
+    color: #9c27b0;
 }
 .popular-books-table li div p > i {
     font-size: 22px;
@@ -59,6 +68,7 @@
     margin-top: 21px;
 }
 .popular-books-table li div {
-    width: 290px;
+    padding-left: 134px;
+    width: 180px;
 }
 /** end 最受欢迎图书 **/
