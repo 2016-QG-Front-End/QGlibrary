@@ -148,6 +148,8 @@
 
 		font-size:13px;
 		text-align: left;
+
+		word-wrap: break-word;
 		
 	}
 

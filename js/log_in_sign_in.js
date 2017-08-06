@@ -44,7 +44,28 @@ $(function() {
         $('.warm-sign-in').css("display", "block")
             .prev().css("display", "block");
     })
+    locationSearch();
 })
+/**
+ * [locationSearch 判断是注册还是登陆]
+ * @return {[type]} [返回null，以此结束函数]
+ */
+function locationSearch() {
+    var qs = (location.search.length > 0 ? location.search.substring(1) : false) ;
+ 
+    if (qs == false) {
+        return ;
+    }
+
+    if (qs.split('=')[1] == '1'){
+
+    } else {
+        $('.warm-sign-in').css("display", "none")
+            .prev().css("display", "none");
+        $('.warm-log-in').css("display", "block")
+            .prev().css("display", "block");
+    }
+}
 
 /**
  * [正则表达式对账号密码验证]
@@ -94,7 +115,7 @@ $(function() {
         };
     })
 
-    $('#signInWsername').bind('keyup', function(e) {
+    $('#signInUsername').bind('keyup', function(e) {
         var ev = window.event || e;
 
         //13是键盘上面固定的回车键
@@ -173,6 +194,9 @@ $(function() {
                 data: JSON.stringify(obj),
                 dataType: "json",
                 async: false,
+                xhrFields: {
+                    withCredentials: true
+                },
                 success: function(data) {
                     logInChange(data);
                 },
@@ -197,7 +221,7 @@ function logInChange(data) {
 
     switch (data.status) {
         case 'true':
-            location.href = data.url;
+            location.href = 'index.html';
             break;
         case 'false':
             $('.log-in-error').html('用户名不存在或密码错误').css("display", "block");
@@ -229,10 +253,13 @@ $(function() {
 
             $.ajax({
                 type: "post",
-                url: 'hhttp://192.168.199.79:10086/hasUser',
+                url: 'http://192.168.199.79:10086/hasUser',
                 data: JSON.stringify(obj),
                 dataType: "json",
                 async: true,
+                xhrFields: {
+                    withCredentials: true
+                },
                 success: function(data) {
                     hasUser(data);
                 },
@@ -296,9 +323,12 @@ $(function() {
                 data: JSON.stringify(obj),
                 dataType: "json",
                 async: true,
+                xhrFields: {
+                    withCredentials: true
+                },
                 success: function(data) {
                     if (data.status) {
-                        location.href = data.url;
+                        location.href = 'log_in.html?status=1';
                     }
                 },
                 xhrFields: {

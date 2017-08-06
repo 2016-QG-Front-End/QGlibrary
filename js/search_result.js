@@ -41,7 +41,7 @@ function booktip() {
 				        + '<p>' + data.aboutwriter + '</p>'
 				        + '<h5>内容简介</h5>'
 				        + '<p>' + data.content + '</p>'
-				        + '<a href="' + data.douban + '">去买书</a>'
+				        + '<a href="' + data.douban + '" target="_blank">去买书</a>'
 
 				    $('.simple-info').html(booktip);
 				    $('.simple-info')
@@ -79,7 +79,7 @@ function scrollBottom() {
 		var contentH = $(document).height();
 		var scrollTop = $(window).scrollTop();
 
-		if(scrollTop/(contentH - viewH) >= 0.9) {
+		if(scrollTop/(contentH - viewH) == 1) {
 			result();
 		}
 
@@ -91,9 +91,10 @@ function scrollBottom() {
  * [请求搜索结果加载图片]
  */
 function result() {
-	var search = decodeURI(window.location.search);
+	var search = window.location.search;
 	var qs = (search.length > 0 ? search.substring(1) : '');
-	var key = decodeURIComponent(qs.split('&')[0].split('=')[1]);
+	var key = qs.split('&')[0].split('=')[1];
+	$('input').val(key);
 	var rq = {
 		datas : key,
 		index : $('.index').text()
@@ -132,6 +133,14 @@ function addBooks (books,parent) {
 		if( !(/\.(jpe?g|png|gif)$/i.test(books[i].picture))) {
 			books[i].picture = "../images/default.gif";
 		}
+		// if(book[i].rating == '') {
+		// 	book[i].rating == '10';
+		// }
+
+if(books[i].author.length>=20) {
+	books[i].author = books[i].author.substring(0, 20);
+}
+
 		var str = 				
 			'<li class="main-info">'
 		+	'<img src="'+books[i].picture+'">'

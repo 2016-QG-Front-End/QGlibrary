@@ -1,10 +1,4 @@
-    html{
-    height: 100%;
-    }
     body {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
         margin: 0;
     }
     /**导航区开始**/
@@ -51,6 +45,7 @@
     .navigation {
         position: fixed;
         top: 0;
+        border-bottom: 1px solid transparent;
         width: 100%;
         height: 60px;
         background: white;
@@ -68,15 +63,14 @@
     /***导航内容区结束***/
     /***网站图表区开始***/
 
-    #logo {
+    .logo {
         float: left;
         width: 200px;
         height: 60px;
         background-size: 100% 100%;
-        cursor: pointer;
     }
 
-    #logo a {
+    .logo a {
         float: right;
         width: 140px;
         font-size: 25px;
@@ -85,11 +79,11 @@
         text-align: left;
     }
 
-    #logo a font {
+    .logo a font {
         font-weight: bolder;
     }
 
-    #logo img {
+    .logo img {
         float: left;
         padding-top: 5px;
         width: 50px;
@@ -102,32 +96,22 @@
         float: right;
 
         margin: 11px 20px;
-        border: 0.1px solid #b5b3b3;
+        border: 0.1px solid #d4d2d2;
         border-radius: 3px;
         padding: 0 0 0 5px;
         width: 300px;
         height: 39px;
 
-
+        outline-color: #d07cde;
 
         background: #f6f6f6;
-    }
-
-    #search:focus {
-        border: 1px solid #9C27B0;
-
-        outline: none;
-        box-shadow: 0 0 8px #9C27B0;
-
-        -webkit-transition: box-shadow .20s linear 0s;
-        transition: box-shadow .20s linear 0s;
     }
 
     .button {
         display: inline-block;
         position: relative;
         top: 16px;
-        left: 787px;
+        left: 780px;
 
         border: none;
         width: 32px;
@@ -136,8 +120,7 @@
         outline: none;
         cursor: pointer;
 
-        background-color: #f6f6f6;
-        background-image: url(../images/search.png);
+        background: url(../images/search.png);
     }
     /**end 搜索框**/
     /**用户信息块开始**/
@@ -152,7 +135,7 @@
         height: 60px;
         line-height: 60px;
         text-align: right;
-        display: block;
+        display: none;
     }
 
     .login-state a {
@@ -174,7 +157,7 @@
 
 
     #userInfo {
-        display: none;
+        display: block;
     }
 
     .login-state #userHead {
@@ -209,23 +192,10 @@
     }
     /***用户信息块结束***/
     /**导航区结束**/
-
-    /**主容器开始**/
-
-    .container {
-        flex: 1 0 auto;
-        margin: 65px auto 0;
-        width: 1200px;
-        height: auto;
-        background: white;
-    }
-    /**主容器结束**/
-
     /**网站底部开始**/
 
     .footer {
-        flex: 0 0 auto;
-        /*position: relative;*/
+        position: relative;
         height: 230px;
         background-color: #f7f7f7;
     }
@@ -273,10 +243,9 @@
         font-weight: bolder;
     }
 
-    .footer .logo {
+    .footer-logo .logo {
         float: left;
         width: 50px;
-        height: 50px;
         background: url(../images/logoBlack.png);
         background-size: 100%;
         background-position: center;
