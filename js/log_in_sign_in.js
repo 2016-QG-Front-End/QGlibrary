@@ -328,7 +328,7 @@ $(function() {
                 },
                 success: function(data) {
                     if (data.status) {
-                        location.href = 'log_in.html?status=1';
+                        location.href = 'index.html';
                     }
                 },
                 xhrFields: {

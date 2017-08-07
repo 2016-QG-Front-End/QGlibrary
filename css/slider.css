@@ -1,63 +1,96 @@
-
 /**图书轮播开始**/
-    .slider {
-        height: 400px;
-        background-color: #8bc24a;
-        overflow: hidden;
-        background: url(../images/sliderBack.jpg);
-    }
 
-    .slide-container {
-        position: relative;
-        top:50px;
-        height: 300px;
-        width: 3900px;
-        margin-left: 225px;
-        /*border:solid black 1px;*/
-    }
-    .slide-container .one-screen{
-        float: left;
-        /*border:solid 1px;*/
-        height: 300px;
-        width: 975px;
-    }
-    .slide-container img {
-        float: left;
-        width: 200px;
-        height: 300px;
-        box-shadow: 0 1px 4px rgba(0,0,0,0.4);
-    }
+.slider {
+    height: 400px;
+    background-color: #8bc24a;
+    overflow: hidden;
+    background: url(../images/sliderBack.jpg);
+}
 
-    .slide-container .hot-book-info {
-        float: left;
-        width: 500px;
-        height: 300px;
-        margin-left:50px;
-        color: white;
-    }
-    .slide-container .hot-book-info h1{
-        margin:0;
-        color: white;
-    }
+.slider .arrow {
+    /*display: none;*/
 
-    .slide-container span {
-        font-size: 20px;
-    }
-    .slide-container .hot-book-info a {
-        text-decoration: none;
-        color: #9C27B0;
-        font-size: 20px;
-    }
+    position: absolute;
+    float:left;
+    top: 250px;
+    z-index: 3;
 
-    .slide-container .hot-book-score{
-        font-size: 60px;
-        margin-left: 30px;
-    }
+    border-radius: 10%;
+    width: 30px;
+    height: 40px;
 
-    .slide-container .hot-book-intro {
-        text-indent: 2em;
-        overflow: hidden;
-        height: 109px;
-        width: 100%;
-    }
+    font-family: sans-serif;
+    font-size: 25px;
+    font-weight: lighter;
+    line-height: 40px;
+    text-align: center;
+
+    color: #fff;
+    background-color: rgba(0, 0, 0, .5);
+
+    cursor: pointer;
+}
+
+.slider .arrow:hover {
+    background-color: #9C27B0;
+}
+
+.slide-container {
+    position: relative;
+    top: 50px;
+    height: 300px;
+    width: 4875px;
+    /*border:solid black 1px;*/
+}
+
+.slide-container .one-screen {
+    float: left;
+    /*border:solid 1px;*/
+    height: 300px;
+    width: 975px;
+}
+
+.slide-container img {
+    float: left;
+    width: 200px;
+    height: 300px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.slide-container .hot-book-info {
+    float: left;
+    width: 500px;
+    height: 300px;
+    margin-left: 50px;
+    color: white;
+}
+
+.slide-container .hot-book-info h1 {
+    margin: 0;
+    color: white;
+}
+
+.slide-container span {
+    font-size: 20px;
+}
+
+.slide-container .hot-book-info a {
+    text-decoration: none;
+    color: #9C27B0;
+    font-size: 20px;
+}
+
+.slide-container .hot-book-score {
+    font-size: 60px;
+    margin-left: 30px;
+}
+
+.slide-container .hot-book-intro {
+    text-indent: 2em;
+    overflow: hidden;
+    height: 109px;
+    width: 100%;
+}
+
+
 /**图书轮播结束**/
