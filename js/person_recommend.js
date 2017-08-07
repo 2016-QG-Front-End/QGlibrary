@@ -109,9 +109,7 @@ $(function() {
                 }
 
             },
-            // error: function(xhr, status, errorThrowm) {
-            //     alert("错误" + status + "错误抛出：" + errorThrowm);
-            // }
+
         });
 
     }, 3000);
@@ -172,9 +170,7 @@ $(function() {
             }
 
         },
-        // error: function(xhr, status, errorThrowm) {
-        //     alert("错误" + status + "错误抛出：" + errorThrowm);
-        // }
+
     });
 
 })
